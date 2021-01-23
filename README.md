@@ -1,4 +1,4 @@
 # onlin
 Online invitation service
 
-test git - slack
+test git - slack channel push
