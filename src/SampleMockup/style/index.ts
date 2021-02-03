@@ -2,6 +2,8 @@ import styled from "@emotion/styled";
 
 export const Wrapper = styled.article`
   width: 100vw;
+  max-width: 375px;
+  max-height: 667px;
   height: 100vh;
   background: url("/images/m_wrap.png") no-repeat;
   background-size: cover;
@@ -11,14 +13,14 @@ export const Wrapper = styled.article`
 export const Page = styled.article`
   width: 100%;
   height: 100%;
-  overflow: scroll;
+  overflow-y: scroll;
 `;
 export const ContentWrapper = styled.main`
   position: fixed;
-  top: 12vh;
-  left: 5vw;
-  width: 75vw;
-  height: 75.2vh;
+  top: calc(667px * 0.12);
+  left: calc(375px * 0.05);
+  width: calc(375px * 0.75);
+  height: calc(667px * 0.752);
   overflow: hidden;
   //background: grey;
 `;
