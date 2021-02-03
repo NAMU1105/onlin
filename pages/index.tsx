@@ -1,29 +1,24 @@
-import Link from 'next/link'
-import Layout from '../components/Layout'
-import styled from "@emotion/styled";
-import wrappingImage from '../images/m_wrap.png'
-
-const EmotionTest = styled.div`
-font-size: 42px;
-`
+import emotionReset from "emotion-reset";
+import { Global, css } from "@emotion/react";
+import SampleMockUp from "../src/SampleMockup";
 
 const IndexPage = () => (
-    <Layout title="Home | Next.js + TypeScript Example">
-        <EmotionTest>Hello Next.js 👋</EmotionTest>
-        <p>
-            <Link href="/about">
-                <a>About</a>
-            </Link>
+  <>
+    <Global
+      styles={css`
+        ${emotionReset}
+        *, *::after, *::before {
+          font-family: "Nanum Myeongjo", "Courier New";
+          box-sizing: border-box;
+          line-height: 1.5;
+          -moz-osx-font-smoothing: grayscale;
+          -webkit-font-smoothing: antialiased;
+          font-smoothing: antialiased;
+        }
+      `}
+    />
+    <SampleMockUp />
+  </>
+);
 
-
-        </p>
-
-        <p>
-            <Link href="/sample">
-                <img src={wrappingImage}/>
-            </Link>
-        </p>
-    </Layout>
-)
-
-export default IndexPage
+export default IndexPage;
