@@ -8,6 +8,10 @@ import {
   Page,
   Wrapper,
   CallSection,
+  ContactRow,
+  PhoneIcon,
+  MailIcon,
+  ContactBanner,
 } from "./style";
 
 const SampleMockUp: React.FC = () => {
@@ -29,10 +33,18 @@ const SampleMockUp: React.FC = () => {
 따뜻한 마음으로 격려해 주신다면
 큰 힘이 되겠습니다.`}
           </MessageSection>
+          <ContactRow>
+            <span>신랑에게 축하인사</span>
+            <PhoneIcon />
+            <MailIcon />
+          </ContactRow>
+          <ContactRow>
+            <span>신부에게 축하인사</span>
+            <PhoneIcon />
+            <MailIcon />
+          </ContactRow>
+          <ContactBanner>혼주에게 전화하기</ContactBanner>
           <CallSection>
-            <div> 신랑에게 축하인사</div>
-            <div> 신부에게 축하인사</div>
-            <div>혼주에게 전화하기</div>
             <div>
               <div>신랑측 혼주</div>
               <div>신부측 혼주</div>

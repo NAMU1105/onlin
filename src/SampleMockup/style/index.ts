@@ -60,7 +60,7 @@ export const MessageSection = styled.section`
   display: flex;
   text-align: center;
   font-size: 14px;
-  padding: 120px 20px 60px 20px;
+  padding: 120px 20px 20px 20px;
   justify-content: center;
   background: url("/images/messege.jpg");
   background-size: cover;
@@ -73,3 +73,30 @@ export const CallSection = styled.section`
   font-size: 14px;
   justify-content: center;
 `;
+
+export const ContactBanner = styled.div`
+  color: white;
+  text-align: center;
+  background-color: #cb724c;
+  padding: 8px;
+  margin: 8px 0;
+  font-size: 16px;
+  font-weight: bold;
+`;
+
+export const ContactRow = styled.span`
+  display: flex;
+  justify-content: center;
+  font-size: 12px;
+  padding: 4px;
+`;
+
+export const PhoneIcon = styled.div`
+  height: 20px;
+  width: 20px;
+  border-radius: 4px;
+  background: grey;
+  margin-left: 8px;
+`;
+
+export const MailIcon = styled(PhoneIcon)``;

@@ -15,7 +15,6 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap"
             rel="stylesheet"
           />
-          <title>test</title>
         </Head>
         <body>
           <Main />
