@@ -72,6 +72,7 @@ export const CallSection = styled.section`
   text-align: center;
   font-size: 14px;
   justify-content: center;
+  width: 100%;
 `;
 
 export const ContactBanner = styled.div`
@@ -79,7 +80,7 @@ export const ContactBanner = styled.div`
   text-align: center;
   background-color: #cb724c;
   padding: 8px;
-  margin: 8px 0;
+  margin: 24px 0 16px 0;
   font-size: 16px;
   font-weight: bold;
 `;
@@ -89,6 +90,10 @@ export const ContactRow = styled.span`
   justify-content: center;
   font-size: 12px;
   padding: 4px;
+
+  span {
+    margin-right: 8px;
+  }
 `;
 
 export const PhoneIcon = styled.div`
@@ -96,7 +101,7 @@ export const PhoneIcon = styled.div`
   width: 20px;
   border-radius: 4px;
   background: grey;
-  margin-left: 8px;
+  margin: 0 4px;
 `;
 
 export const MailIcon = styled(PhoneIcon)``;
