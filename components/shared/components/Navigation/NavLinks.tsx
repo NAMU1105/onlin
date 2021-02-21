@@ -2,18 +2,17 @@ import React from "react";
 import Link from "next/link";
 
 const NavLinks = (props) => {
-  const { linkType, title } = props;
+  const { linkType, title, to } = props;
 
   let elem;
 
   if (linkType === "a") {
     elem = (
-      <a
-        href="#"
-        className="uppercase text-base font-medium text-gray-500 hover:text-gray-900"
-      >
-        {title}
-      </a>
+      <Link href="#">
+        <a className="uppercase text-base font-medium text-gray-500 hover:text-gray-900">
+          {title}
+        </a>
+      </Link>
     );
   } else {
     elem = (

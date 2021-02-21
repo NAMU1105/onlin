@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const DropdownMobile = (props) => {
   {
@@ -13,23 +13,33 @@ const DropdownMobile = (props) => {
             To: "opacity-0 scale-95"
         --> */
   }
+
+  const { open, onToggle } = props;
+  //   const [isOpenDropdownMobile, setDropdownMobile] = useState<string>("");
+
   return (
-    <div className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
+    <div
+      className={`absolute top-0 inset-x-0 p-2 transition transform origin-top-right ${open}`}
+      id="dropdown-mobile"
+    >
+      {/* <div className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"> */}
       <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
         <div className="pt-5 pb-6 px-5">
           <div className="flex items-center justify-between">
-            <div>
+            <div className="flex items-center">
               <img
-                className="h-8 w-auto"
+                className="h-8 w-auto pr-1"
                 src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
                 alt="Workflow"
               />
+              <span className="uppercase">Onlin</span>
             </div>
 
             <div className="-mr-2">
               <button
                 type="button"
                 className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                onClick={onToggle}
               >
                 <span className="sr-only">Close menu</span>
                 {/* <!-- Heroicon name: outline/x --> */}

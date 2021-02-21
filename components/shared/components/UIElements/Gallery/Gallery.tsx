@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 
-import Video from "../shared/components/UIElements/Video";
+import Video from "../Video";
 
 const Container = styled.article`
   display: grid;

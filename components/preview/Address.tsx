@@ -1,5 +1,5 @@
 import React from "react";
-import Map from "../shared/Map";
+import Map from "../shared/components/UIElements/Map";
 
 const address = "DEAR HOTEL 그랜드홀 서울 강남구 압구정로 120";
 
