@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 
-import DropdownMobile from "../UIElements//Dropdown/Dropdown-Mobile";
+import DropdownMobile from "./Dropdown/Dropdown-Mobile";
 import NavLinks from "./NavLinks";
 import Logo from "../UIElements/Logo";
 
