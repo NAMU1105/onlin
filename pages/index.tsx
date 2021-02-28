@@ -48,12 +48,12 @@ const IndexPage = () => (
 
       <title>Olin project</title>
       {/* kakao map */}
-      <script
+      {/* <script
         type="text/javascript"
         src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2dd917823648fbc7a4deb96e6a1ecf56"
-      ></script>
+      ></script> */}
       {/* <!-- services 라이브러리 불러오기 --> */}
-      <script
+      {/* <script
         type="text/javascript"
         src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2dd917823648fbc7a4deb96e6a1ecf56&libraries=services"
       ></script>
@@ -62,7 +62,7 @@ const IndexPage = () => (
         href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
         integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu"
         crossOrigin="anonymous"
-      ></link>
+      ></link> */}
       {/* <script type="text/javascript" src={KAKAOMAP_KEY}></script> */}
       {/* google map */}
       {/* <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUg5GaeCRZVs7KrcOTRnPplvfojXeBUa0"></script> */}
