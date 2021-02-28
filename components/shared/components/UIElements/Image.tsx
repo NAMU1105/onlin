@@ -6,7 +6,7 @@ import Modal from "./Modal";
 const Image = ({ id, src, alt }) => {
   const [isModalOpened, setModalOpened] = useState<boolean>(false);
 
-  const clickTest = () => {
+  const toggleModal = () => {
     console.log("clicked");
     console.log(id);
 
@@ -24,11 +24,16 @@ const Image = ({ id, src, alt }) => {
       {isModalOpened && (
         <>
           <Backdrop onClick={toggleModalOpen} />
-          <Modal src={src} alt={alt}></Modal>
+          <Modal src={src} alt={alt} imageId={id}></Modal>
         </>
       )}
 
-      <img src={src} alt={alt} onClick={clickTest} className="cursor-pointer" />
+      <img
+        src={src}
+        alt={alt}
+        onClick={toggleModal}
+        className="cursor-pointer"
+      />
     </>
   );
 };
