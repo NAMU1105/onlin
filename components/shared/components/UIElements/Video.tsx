@@ -11,7 +11,7 @@ const Video = (props) => {
     <Container
       title="tsdniktHmOU"
       id="player"
-      type="text/html"
+      // type="text/html"
       width="640"
       height="390"
       src={`${baseUrl}tsdniktHmOU?enablejsapi=1&origin=http://example.com`}
