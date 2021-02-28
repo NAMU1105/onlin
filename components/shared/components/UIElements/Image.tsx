@@ -3,7 +3,7 @@ import Backdrop from "./Backdrop";
 import Modal from "./Modal";
 
 // 이미지 온클릭 시 모달창으로 띄워주기
-const Image = ({ id, src, alt }) => {
+const Image = ({ id, src, alt, totalCount }) => {
   const [isModalOpened, setModalOpened] = useState<boolean>(false);
 
   const toggleModal = () => {
@@ -24,7 +24,12 @@ const Image = ({ id, src, alt }) => {
       {isModalOpened && (
         <>
           <Backdrop onClick={toggleModalOpen} />
-          <Modal src={src} alt={alt} imageId={id}></Modal>
+          <Modal
+            src={src}
+            alt={alt}
+            imageId={id + 1}
+            totalCount={totalCount}
+          ></Modal>
         </>
       )}
 

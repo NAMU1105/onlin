@@ -54,19 +54,7 @@ const DUMMY_IMAGES = [
   },
 ];
 
-// CSS
-// const Container = styled.div`
-//   display: grid;
-//   grid-gap: 5px;
-//   grid-template-rows: repeat(2, 1fr);
-//   grid-template-columns: repeat(3, 1fr);
-
-//   & img {
-//     width: 100%;
-//   }
-// `;
-
-const dynamicStyle = (props) =>
+const dynamicStyle = (props: ContainerTypeProps) =>
   css`
     display: ${props.display};
     grid-gap: 5px;
@@ -93,33 +81,31 @@ const CaroselContainer = styled.div`
   }
 `;
 
+type ContainerTypeProps = {
+  display: string;
+};
+
 const Gallery = (props) => {
-  const totalCarosel = DUMMY_IMAGES.length - 1;
-  // console.log(totalCarosel);
+  const totalCaroselCount = DUMMY_IMAGES.length - 1;
+  // console.log(totalCaroselCount);
 
   const [viewType, setViewType] = useState("carosel");
   const [currentCarosel, setCurrentCarosel] = useState(0);
   const slideRef = useRef(null);
 
-  // useInterval(() => {
-  //   setCurrentCarosel(currentCarosel === totalCarosel ? 0 : currentCarosel + 1);
-  // }, 2000);
-
   const changeViewTypeHandler = (type) => {
-    console.log(type);
-
     setViewType(type);
   };
 
   const moveCarosel = (dir) => {
     if (dir === "left") {
       if (currentCarosel === 0) {
-        setCurrentCarosel(totalCarosel);
+        setCurrentCarosel(totalCaroselCount);
       } else {
         setCurrentCarosel(currentCarosel - 1);
       }
     } else {
-      if (currentCarosel === totalCarosel) {
+      if (currentCarosel === totalCaroselCount) {
         setCurrentCarosel(0);
       } else {
         setCurrentCarosel(currentCarosel + 1);
@@ -154,6 +140,7 @@ const Gallery = (props) => {
                   id={image.id}
                   src={image.src}
                   alt="couple"
+                  totalCount={totalCaroselCount}
                 />
               );
             })}
@@ -175,12 +162,11 @@ const Gallery = (props) => {
         {DUMMY_IMAGES.map((image) => {
           return (
             <Image
-              // ref={ImageRef}
               key={image.id}
               id={image.id}
               src={image.src}
               alt="couple"
-              // onClick={clickTest}
+              totalCount={totalCaroselCount}
             />
           );
         })}
@@ -225,25 +211,5 @@ const Gallery = (props) => {
     </>
   );
 };
-
-// function useInterval(callback, delay) {
-//   const savedCallback = useRef();
-
-//   // Remember the latest function.
-//   useEffect(() => {
-//     savedCallback.current = callback;
-//   }, [callback]);
-
-//   // Set up the interval.
-//   useEffect(() => {
-//     function tick() {
-//       savedCallback.current();
-//     }
-//     if (delay !== null) {
-//       let id = setInterval(tick, delay);
-//       return () => clearInterval(id);
-//     }
-//   }, [delay]);
-// }
 
 export default Gallery;
