@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import Backdrop from "./Backdrop";
 import Modal from "./Modal";
+import Slider from "./Slider";
 
 // 이미지 온클릭 시 모달창으로 띄워주기
 const Image = ({ id, src, alt, totalCount }) => {
@@ -23,13 +24,16 @@ const Image = ({ id, src, alt, totalCount }) => {
     <>
       {isModalOpened && (
         <>
-          <Backdrop onClick={toggleModalOpen} />
-          <Modal
+          <Backdrop>
+            {/* <Backdrop onClick={toggleModalOpen}> */}
+            <Slider onClick={toggleModalOpen} />
+          </Backdrop>
+          {/* <Modal
             src={src}
             alt={alt}
             imageId={id + 1}
             totalCount={totalCount}
-          ></Modal>
+          ></Modal> */}
         </>
       )}
 

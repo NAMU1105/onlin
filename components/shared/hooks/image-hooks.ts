@@ -2,9 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 
-import Video from "../shared/components/UIElements/Video";
-import SliderImage from "../shared/components/UIElements/Slider";
-import Image from "../shared/components/UIElements/Image";
+import Image from "../components/UIElements/Image";
 
 const DUMMY_IMAGES = [
   {
@@ -54,34 +52,38 @@ const DUMMY_IMAGES = [
   },
 ];
 
-const Container = styled.div`
-  display: grid;
-  grid-gap: 5px;
-  grid-template-rows: repeat(2, 1fr);
-  grid-template-columns: repeat(3, 1fr);
-`;
-
-const Gallery = (props) => {
-  return (
-    <>
-      {/* <SliderImage /> */}
-      <Container>
-        {DUMMY_IMAGES.map((image) => {
-          return (
-            <Image
-              key={image.id}
-              id={image.id}
-              src={image.src}
-              alt="couple"
-              totalCount={9}
-            />
-          );
-        })}
-      </Container>
-      <h1>영상보기</h1>
-      <Video />
-    </>
-  );
+type ContainerTypeProps = {
+  display: string;
 };
 
-export default Gallery;
+const dynamicStyle = (props: ContainerTypeProps) =>
+  css`
+    display: ${props.display};
+    grid-gap: 5px;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    flex-direction: column;
+  `;
+
+const Container = styled.div`
+  ${dynamicStyle};
+`;
+const totalImageCount = DUMMY_IMAGES.length + 1;
+
+export const useImage = (props) => {
+  const [viewType, setViewType] = useState("carosel");
+
+  const changeViewTypeHandler = (type) => {
+    setViewType(type);
+  };
+
+  return {
+    DUMMY_IMAGES,
+    totalImageCount,
+    Container,
+    viewType,
+    changeViewTypeHandler,
+  };
+};
+
+export default useImage;
