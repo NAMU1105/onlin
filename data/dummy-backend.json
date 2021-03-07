@@ -1,0 +1,7 @@
+{
+    "users": [
+      { "id": "u1", "title": "user 1", "description": "This is product 1" },
+      { "id": "u2", "title": "user 2", "description": "This is user 2" },
+      { "id": "u3", "title": "user 3", "description": "This is user 3" }
+    ]
+  }

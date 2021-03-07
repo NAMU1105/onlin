@@ -5,9 +5,9 @@ import Header from "../shared/components/Navigation/Header";
 const Layout = ({ children }) => {
   return (
     <div className="content">
-      <Header />
+      {/* <Header /> */}
       {children}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
