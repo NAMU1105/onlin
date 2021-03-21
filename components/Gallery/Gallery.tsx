@@ -1,10 +1,10 @@
 import React, { useRef, useState, useEffect } from "react";
 import styled from "@emotion/styled";
-import { css } from "@emotion/react";
+// import { css } from "@emotion/react";
 
 import Video from "../shared/components/UIElements/Video";
-import SliderImage from "../shared/components/UIElements/Slider";
 import Image from "../shared/components/UIElements/Image";
+import CalendarComp from "../shared/components/UIElements/Calendar";
 
 const DUMMY_IMAGES = [
   {
@@ -62,6 +62,8 @@ const Container = styled.div`
 `;
 
 const Gallery = (props) => {
+  const [value, onChange] = useState(new Date());
+
   return (
     <>
       {/* <SliderImage /> */}
@@ -78,8 +80,14 @@ const Gallery = (props) => {
           );
         })}
       </Container>
-      <h1>영상보기</h1>
-      <Video />
+      <section>
+        <h1>영상보기</h1>
+        <Video />
+      </section>
+      <section>
+        <h1>캘린더</h1>
+        <CalendarComp />
+      </section>
     </>
   );
 };

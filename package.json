@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3030",
     "build": "next build",
     "start": "next start"
   },
@@ -16,6 +16,7 @@
     "next": "10.0.6",
     "next-images": "^1.7.0",
     "react": "17.0.1",
+    "react-calendar": "^3.3.1",
     "react-dom": "17.0.1",
     "react-slick": "^0.28.0",
     "slick-carousel": "^1.8.1"

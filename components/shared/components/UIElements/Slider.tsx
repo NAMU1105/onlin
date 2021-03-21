@@ -82,7 +82,8 @@ const SliderImage = (props) => {
       </button>
       <Slider
         {...settings}
-        className="w-1/2 fixed z-50 top-1/2 left-1/2 transform translate-y-1/4 -translate-x-1/2"
+        id="slider"
+        className="w-1/4 fixed z-50 top-1/2 left-1/2 transform translate-y-1/2 -translate-x-1/2"
       >
         {DUMMY_IMAGES.map((image) => {
           return (

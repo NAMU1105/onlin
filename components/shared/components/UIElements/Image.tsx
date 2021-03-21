@@ -8,8 +8,8 @@ const Image = ({ id, src, alt, totalCount }) => {
   const [isModalOpened, setModalOpened] = useState<boolean>(false);
 
   const toggleModal = () => {
-    console.log("clicked");
-    console.log(id);
+    // console.log("clicked");
+    // console.log(id);
 
     toggleModalOpen();
     // console.log(isModalOpened);
@@ -38,10 +38,11 @@ const Image = ({ id, src, alt, totalCount }) => {
       )}
 
       <img
+        id={id}
         src={src}
         alt={alt}
         onClick={toggleModal}
-        className="cursor-pointer"
+        className="cursor-pointer w-full mr-0"
       />
     </>
   );
