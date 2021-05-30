@@ -3,23 +3,23 @@ import { useRouter } from "next/router";
 // import axios from 'axios';
 import Head from "next/head";
 
-import { requestTempleteData } from "../api/request";
+import { requestTempleteData } from "./api/request";
 
-// import WithHead from "../../components/shared/components/Hoc/WithHead";
+// import WithHead from "../components/shared/components/Hoc/WithHead";
 
-import ComponentMiddleWare from "../../components/shared/router/ComponentMiddleware";
+import ComponentMiddleWare from "../components/shared/router/ComponentMiddleware";
 
-import Main from "../../components/shared/components/UIElements/Main";
-import Greeting from "../../components/shared/components/UIElements/Greeting";
-import Contact from "../../components/shared/components/UIElements/Contact";
-import Calendar from "../../components/shared/components/UIElements/Calendar";
-import Address from "../../components/shared/components/UIElements/Address";
-import Gallery from "../../components/shared/components/UIElements/Gallery";
-import Video from "../../components/shared/components/UIElements/Video";
-import AccountInfo from "../../components/shared/components/UIElements/AccountNo";
-import SNS from "../../components/shared/components/UIElements/Sns";
+import Main from "../components/shared/components/UIElements/Main";
+import Greeting from "../components/shared/components/UIElements/Greeting";
+import Contact from "../components/shared/components/UIElements/Contact";
+import Calendar from "../components/shared/components/UIElements/Calendar";
+import Address from "../components/shared/components/UIElements/Address";
+import Gallery from "../components/shared/components/UIElements/Gallery";
+import Video from "../components/shared/components/UIElements/Video";
+import AccountInfo from "../components/shared/components/UIElements/AccountNo";
+import SNS from "../components/shared/components/UIElements/Sns";
 
-import { sampleData } from "../../data/sampleData";
+import { sampleData } from "../data/sampleData";
 
 const VARIANT_MAPS: Record<string, React.FC<any>> = {
   Main,
@@ -73,8 +73,8 @@ const Detail = (props) => {
 };
 
 // 간이 data fetching code
-async function getData2() {
-  const data = await requestTempleteData("3");
+async function getData2(id: string) {
+  const data = await requestTempleteData(id);
   console.log(data);
 
   return data;
@@ -84,11 +84,7 @@ export const getStaticProps = async (context) => {
   const { params } = context;
   const userId = params.id;
 
-  //   TODO: 나중에 진짜 백엔드 데이터 요청 코드로 바꾸기
-  // const data = await getData();
-  // const user = data.users.find((u) => u.id === userId);
-
-  const user = await getData2();
+  const user = await getData2(userId);
 
   //   invalid한 url일 경우 404페이지 띄움
   if (!user) {
