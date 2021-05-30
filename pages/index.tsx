@@ -1,7 +1,6 @@
 import React from "react";
 import Head from "next/head";
 // import Image from "next/image";
-import Preview from "../components/preview/Preview";
 
 import styled from "@emotion/styled";
 import Header from "../components/shared/components/Navigation/Header";
