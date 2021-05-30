@@ -82,11 +82,11 @@ const Gallery = (props) => {
       </Container>
       <section>
         <h1>영상보기</h1>
-        <Video />
+        {/* <Video /> */}
       </section>
       <section>
         <h1>캘린더</h1>
-        <CalendarComp />
+        {/* <CalendarComp /> */}
       </section>
     </>
   );

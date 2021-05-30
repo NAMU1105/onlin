@@ -13,15 +13,6 @@ const KakaoMap = styled.div`
   height: 30vh;
 `;
 
-const Container = styled.div`
-  /* display: flex;
-  flex-wrap: nowrap; */
-
-  & a > img {
-    width: 25%;
-  }
-`;
-
 const Map = () => {
   // const Map = ({ center, level = 2 }) => {
   const mapRef = useRef();
@@ -43,20 +34,20 @@ const Map = () => {
     <>
       {/* kakao map  */}
       <KakaoMap id="map" ref={mapRef}></KakaoMap>
-      <Container>
-        <a href="">
+      <div className="flex w-full">
+        <a href="" className="w-1/4">
           <img src="/tmap.jpg" alt="tmap" />
         </a>
-        <a href="">
+        <a href="" className="w-1/4">
           <img src="/kakaoNavi.jpg" alt="kakao navigation" />
         </a>
-        <a href="">
+        <a href="" className="w-1/4">
           <img src="/naverMap.jpg" alt="naver map" />
         </a>
-        <a href="">
+        <a href="" className="w-1/4">
           <img src="/daumMap.jpg" alt="daum map" />
         </a>
-      </Container>
+      </div>
     </>
   );
 };

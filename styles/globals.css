@@ -1,5 +1,6 @@
 @import url(//fonts.googleapis.com/earlyaccess/kopubbatang.css);
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+@import "./sass/main.scss";
 
 * {
   box-sizing: border-box;

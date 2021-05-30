@@ -53,7 +53,7 @@ const DUMMY_IMAGES = [
 ];
 
 const settings = {
-  dots: true,
+  dots: false,
   infinite: true,
   speed: 500,
   slidesToShow: 1,
@@ -62,7 +62,7 @@ const settings = {
 
 const SliderImage = (props) => {
   return (
-    <div id="slider" className="w-screen flex flex-col">
+    <div id="slider" className="w-screen h-screen flex flex-col">
       {/* <h2 className="z-50 text-white">Single Item</h2> */}
       <button
         className="w-10 m-5 z-50 text-white fixed right-0"
@@ -83,7 +83,7 @@ const SliderImage = (props) => {
       <Slider
         {...settings}
         id="slider"
-        className="w-1/4 fixed z-50 top-1/2 left-1/2 transform translate-y-1/2 -translate-x-1/2"
+        className="w-1/4 fixed z-50 top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2"
       >
         {DUMMY_IMAGES.map((image) => {
           return (

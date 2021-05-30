@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import Calendar from "react-calendar";
-import "react-calendar/dist/Calendar.css";
+// import "react-calendar/dist/Calendar.css";
 
-const CalendarComp = (props) => {
-  const [value, onChange] = useState(new Date());
+const CalendarComp = ({ content }) => {
+  // console.log(content);
+
+  const [value, onChange] = useState<Date>(new Date());
 
   return (
-    <div>
-      <Calendar onChange={onChange} value={value} />
+    <div className="intro-y">
+      <Calendar onChange={() => onChange} value={value} locale="ko" />
     </div>
   );
 };
