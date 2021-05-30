@@ -112,12 +112,14 @@ const mockTempleteData = {
 };
 
 export const requestTempleteData = async (templeteId: string) => {
-  const url = "";
+  const url = `http://3.138.247.170/api/wedding/detail-public/${templeteId}`;
   try {
-    // axios.get(url);
-    const { data } = await getMockData;
-    const { response } = data;
-    return response as typeof mockTempleteData;
+    const { data } = await axios.get(url);
+    return data.data as typeof mockTempleteData;
+
+    // const { data } = await getMockData;
+    // const { response } = data;
+    // return response as typeof mockTempleteData;
   } catch (e) {
     throw e;
   }

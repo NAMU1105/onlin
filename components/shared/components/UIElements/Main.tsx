@@ -19,24 +19,31 @@ const Container = styled.section`
 `;
 
 const Main = ({ content }) => {
-  // console.log(content);
+  // console.log("main: ", content);
+
+  const date = new Date(content.date).toLocaleTimeString("en", {
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+  });
 
   return (
     <>
       <div className="relative">
         <img
           src="/mainImage.png"
+          // src={content.image}
           alt="Main wedding image"
           className=""
-          // layout="fill"
-          // width={500}
-          // height={500}
         />
-        <Container className="invitation intro-y bottom-0 left-0">
+        <Container className="invitation w-full intro-y bottom-0 left-0 flex flex-col items-center justify-center">
           <h3>{content.title}</h3>
-          <span>{content.date}</span>
-          <span>신랑: {content.groom}</span>
-          <span>신부: {content.bride}</span>
+          <div>
+            <span className="mr-2">신랑: {content.groom}</span>
+            <span>신부: {content.bride}</span>
+          </div>
+          <span className="mr-4">{date}</span>
         </Container>
       </div>
     </>

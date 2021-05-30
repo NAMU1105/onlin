@@ -1,5 +1,3 @@
-import path from "path";
-import fs from "fs/promises";
 import React from "react";
 import { useRouter } from "next/router";
 // import axios from 'axios';
@@ -51,8 +49,8 @@ const Detail = (props) => {
     return <p>Loading...</p>;
   }
 
-  console.log(props.loadedUsers);
-
+  console.log("props.loadedUsers: ", JSON.parse(props.loadedUsers.data));
+  const data = JSON.parse(props.loadedUsers.data).template.templateContent;
   return (
     <>
       <Head>
@@ -62,34 +60,25 @@ const Detail = (props) => {
           content={`${props.loadedUsers.userId}의 결혼식에 초대합니다.`}
         />
       </Head>
-      {props.loadedUsers.template.templateContent.map((t, index) => (
+      {/* TODO: 잠시 주석처리 */}
+      {data.map((t, index) => (
         <ComponentMiddleWare
           key={index}
           component={VARIANT_MAPS[t.sectionName]}
           content={t.content}
         />
       ))}
-      {/* {sampleData.template.templateContent.map(
-        (t) => VARIANT_MAPS[t.sectionName]
-      )} */}
     </>
   );
 };
 
 // 간이 data fetching code
 async function getData2() {
-  const data = await requestTempleteData("test");
-  // console.log(data);
+  const data = await requestTempleteData("3");
+  console.log(data);
 
   return data;
 }
-// async function getData() {
-//   const filePath = path.join(process.cwd(), "data", "dummy-backend.json");
-//   const jsonData = await fs.readFile(filePath);
-//   const data = JSON.parse(jsonData.toString());
-
-//   return data;
-// }
 
 export const getStaticProps = async (context) => {
   const { params } = context;

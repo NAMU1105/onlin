@@ -3,9 +3,8 @@ import Calendar from "react-calendar";
 // import "react-calendar/dist/Calendar.css";
 
 const CalendarComp = ({ content }) => {
-  // console.log(content);
-
-  const [value, onChange] = useState<Date>(new Date());
+  // console.log("map: ", content);
+  const [value, onChange] = useState<Date>(new Date(content.date));
 
   return (
     <div className="intro-y">

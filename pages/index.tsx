@@ -68,15 +68,8 @@ const IndexPage = () => (
     </Head>
     {/* <Header /> */}
     <main>
-      {/* <Preview /> */}
       <Invitation />
     </main>
-    {/* <Container>
-      <div className="preview_wrapper">
-        <div className="preiview_wrapper__content">test</div>
-      </div>
-      <img src="/m_wrap.png" alt="phone" />
-    </Container> */}
   </>
 );
 
