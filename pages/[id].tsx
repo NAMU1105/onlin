@@ -1,9 +1,8 @@
 import React from "react";
 import { useRouter } from "next/router";
-// import axios from 'axios';
 import Head from "next/head";
 
-import { requestTempleteData } from "./api/request";
+import { requestTempleteData, mockTempleteData } from "./api/request";
 
 // import WithHead from "../components/shared/components/Hoc/WithHead";
 
@@ -18,8 +17,6 @@ import Gallery from "../components/shared/components/UIElements/Gallery";
 import Video from "../components/shared/components/UIElements/Video";
 import AccountInfo from "../components/shared/components/UIElements/AccountNo";
 import SNS from "../components/shared/components/UIElements/Sns";
-
-import { sampleData } from "../data/sampleData";
 
 const VARIANT_MAPS: Record<string, React.FC<any>> = {
   Main,
@@ -46,11 +43,14 @@ const Detail = (props) => {
   //   console.log(router.query.id);
 
   if (!props.loadedUsers) {
+    //   TODO: 로딩 스피너 예쁜걸로 수정하기
     return <p>Loading...</p>;
   }
 
-  console.log("props.loadedUsers: ", JSON.parse(props.loadedUsers.data));
-  const data = JSON.parse(props.loadedUsers.data).template.templateContent;
+  // console.log("props.loadedUsers: ", JSON.parse(props.loadedUsers.data));
+  // const data = JSON.parse(props.loadedUsers.data).template.templateContent;
+  const data = props.loadedUsers.template.templateContent;
+  console.log("props.loadedUsers: ", data);
   return (
     <>
       <Head>
@@ -60,7 +60,6 @@ const Detail = (props) => {
           content={`${props.loadedUsers.userId}의 결혼식에 초대합니다.`}
         />
       </Head>
-      {/* TODO: 잠시 주석처리 */}
       {data.map((t, index) => (
         <ComponentMiddleWare
           key={index}
@@ -72,11 +71,10 @@ const Detail = (props) => {
   );
 };
 
-// 간이 data fetching code
-async function getData2(id: string) {
+async function getData(id: string) {
   const data = await requestTempleteData(id);
-  console.log(data);
-
+  // console.log(data);
+  // const data = mockTempleteData;
   return data;
 }
 
@@ -84,7 +82,7 @@ export const getStaticProps = async (context) => {
   const { params } = context;
   const userId = params.id;
 
-  const user = await getData2(userId);
+  const user = await getData(userId);
 
   //   invalid한 url일 경우 404페이지 띄움
   if (!user) {
@@ -106,8 +104,8 @@ export const getStaticPaths = async () => {
 
   const DUMMY_PATH = [
     { params: { id: "1" } },
-    { params: { id: "1" } },
-    { params: { id: "1" } },
+    { params: { id: "2" } },
+    { params: { id: "3" } },
   ];
 
   return {

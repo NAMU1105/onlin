@@ -21,6 +21,7 @@ module.exports = {
     "length-zero-no-unit": null,
     "rule-empty-line-before": null,
     "at-rule-no-unknown": null,
+    "no-invalid-double-slash-comments": null,
     //"scss/at-rule-no-unknown": true,
   },
 };

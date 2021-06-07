@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from "axios";
 
-const mockTempleteData = {
+export const mockTempleteData = {
   userId: "호창",
   createAt: "Sun Apr 18 2021 21:22:15 GMT+0900",
   updateAt: "Sun Apr 18 2021 21:22:15 GMT+0900",
@@ -11,6 +11,8 @@ const mockTempleteData = {
       {
         sectionName: "Main",
         content: {
+          image:
+            "https://www.notion.so/image/https%3A%2F%2Flh4.googleusercontent.com%2F-FtvWppKEehM%2FAAAAAAAAAAI%2FAAAAAAAAAAA%2FAMZuucnEN4fM2puFxXzUtFWksnIwxOWadg%2Fphoto.jpg?width=50&userId=a2b03033-47b0-4929-bf8b-7bfe050b137e&cache=v2",
           title: "파이썬과 코틀린의 결혼식에 초대합니다",
           date: "2021-06-01T12:00:00+01:00",
           place: {
@@ -37,9 +39,13 @@ const mockTempleteData = {
         content: {
           groomContact: "01010203041",
           brideContact: "01010203041",
+          groomFatherName: "장기용",
           groomFatherContact: "01010203042",
+          groomMotherName: "선결제",
           groomMotherContact: "01010203042",
+          brideFatherName: "추가할",
           brideFatherContact: "01010203043",
+          brideMotherName: "인차운",
           brideMotherContact: "01010203044",
         },
       },
@@ -105,7 +111,9 @@ const mockTempleteData = {
       },
       {
         sectionName: "sns",
-        content: ["kakao", "facebook", "sms", "twitter"],
+        content: {
+          snsList: ["kakao", "facebook", "sms", "twitter"],
+        },
       },
     ],
   },
@@ -114,14 +122,14 @@ const mockTempleteData = {
 export const requestTempleteData = async (templeteId: string) => {
   const url = `http://3.138.247.170/api/wedding/detail-public/${templeteId}`;
   try {
-    const { data } = await axios.get(url);
-    return data.data as typeof mockTempleteData;
-
+    // const { data } = await axios.get(url);
+    // return data.data as typeof mockTempleteData;
     // const { data } = await getMockData;
     // const { response } = data;
     // return response as typeof mockTempleteData;
+    return mockTempleteData;
   } catch (e) {
-    throw e;
+    console.log(e);
   }
 };
 

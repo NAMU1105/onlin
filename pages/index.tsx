@@ -4,7 +4,7 @@ import Head from "next/head";
 
 import styled from "@emotion/styled";
 import Header from "../components/shared/components/Navigation/Header";
-import Invitation from "./invitation";
+// import Invitation from "./invitation";
 
 const KAKAOMAP_KEY = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.REACT_APP_KAKAOMAP_API_KEY}`;
 
@@ -67,9 +67,7 @@ const IndexPage = () => (
       {/* <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUg5GaeCRZVs7KrcOTRnPplvfojXeBUa0"></script> */}
     </Head>
     {/* <Header /> */}
-    <main>
-      <Invitation />
-    </main>
+    <main>{/* <Invitation /> */}</main>
   </>
 );
 
