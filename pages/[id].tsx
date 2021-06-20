@@ -1,22 +1,23 @@
-import React from "react";
-import { useRouter } from "next/router";
-import Head from "next/head";
+import React from 'react';
+import { useRouter } from 'next/router';
+import Head from 'next/head';
 
 import { requestTempleteData } from './api/request';
 
 // import WithHead from "../components/shared/components/Hoc/WithHead";
 
-import ComponentMiddleWare from "../components/shared/router/ComponentMiddleware";
+import ComponentMiddleWare from '../components/shared/router/ComponentMiddleware';
 
-import Main from "../components/shared/components/UIElements/Main";
-import Greeting from "../components/shared/components/UIElements/Greeting";
-import Contact from "../components/shared/components/UIElements/Contact";
-import Calendar from "../components/shared/components/UIElements/Calendar";
-import Address from "../components/shared/components/UIElements/Address";
-import Gallery from "../components/shared/components/UIElements/Gallery";
-import Video from "../components/shared/components/UIElements/Video";
-import AccountInfo from "../components/shared/components/UIElements/AccountNo";
-import SNS from "../components/shared/components/UIElements/Sns";
+import Main from '../components/shared/components/UIElements/Main';
+import Greeting from '../components/shared/components/UIElements/Greeting';
+import Contact from '../components/shared/components/UIElements/Contact';
+import Calendar from '../components/shared/components/UIElements/Calendar';
+import Address from '../components/shared/components/UIElements/Address';
+import Gallery from '../components/shared/components/UIElements/Gallery';
+import Video from '../components/shared/components/UIElements/Video';
+import AccountInfo from '../components/shared/components/UIElements/AccountNo';
+import SNS from '../components/shared/components/UIElements/Sns';
+import Footer from '../components/shared/components/UIElements/Footer';
 
 const VARIANT_MAPS: Record<string, React.FC<any>> = {
   Main,
@@ -46,7 +47,6 @@ const Detail = (props) => {
     //   TODO: 로딩 스피너 예쁜걸로 수정하기
     return <p>Loading...</p>;
   }
-  
 
   // console.log(
   //   'props.loadedUsers!!!: ',
@@ -78,6 +78,7 @@ const Detail = (props) => {
           content={t.content}
         />
       ))}
+      <Footer />
     </>
   );
 };

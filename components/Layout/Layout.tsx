@@ -1,8 +1,8 @@
-import React from "react";
-import Head from "next/head";
+import React from 'react';
+import Head from 'next/head';
 
-import Footer from "../shared/components/UIElements/Footer";
-import Header from "../shared/components/Navigation/Header";
+import Footer from '../shared/components/UIElements/Footer';
+import Header from '../shared/components/Navigation/Header';
 const KAKAOMAP_KEY = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.REACT_APP_KAKAOMAP_API_KEY}`;
 
 const Layout = ({ children }) => {
@@ -10,11 +10,11 @@ const Layout = ({ children }) => {
     <>
       <Head>
         <title>Olin</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel='icon' href='/favicon.ico' />
         {/* kakao map */}
         <script
-          type="text/javascript"
-          src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d00c50badc5a2685a0229ce581e51379"
+          type='text/javascript'
+          src='//dapi.kakao.com/v2/maps/sdk.js?appkey=d00c50badc5a2685a0229ce581e51379'
         ></script>
         {/* <!-- services 라이브러리 불러오기 --> */}
         {/* <script
@@ -32,7 +32,7 @@ const Layout = ({ children }) => {
         {/* <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUg5GaeCRZVs7KrcOTRnPplvfojXeBUa0"></script> */}
       </Head>
 
-      <div className="content w-full flex flex-col items-center justify-center">
+      <div className='content w-full flex flex-col items-center justify-center'>
         {/* <Header /> */}
         {children}
         {/* <Footer /> */}

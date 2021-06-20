@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
 const Footer = (props) => {
   return (
-    <div>
-      <h1>footer</h1>
-    </div>
+    <footer id='footer' className='footer'>
+      <h1>Olin</h1>
+    </footer>
   );
 };
 

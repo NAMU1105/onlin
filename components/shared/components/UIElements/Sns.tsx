@@ -1,20 +1,20 @@
-import React from "react";
-import * as Icon from "react-feather";
+import React from 'react';
+import * as Icon from 'react-feather';
 
 //  TODO: 공유하기 기능 추가
 const Sns = ({ content }) => {
-  console.log("sns: ", content);
+  console.log('sns: ', content);
 
   const returnIcon = (content) => {
     let icon;
     switch (content) {
-      case "kakao":
+      case 'kakao':
         icon = <Icon.MessageCircle />;
         break;
-      case "facebook":
+      case 'facebook':
         icon = <Icon.Facebook />;
         break;
-      case "twitter":
+      case 'twitter':
         icon = <Icon.Twitter />;
         break;
 
@@ -26,14 +26,11 @@ const Sns = ({ content }) => {
   };
 
   return (
-    <section className="sns intro-y mt-12 text-center">
-      <h1 className="sub-title mb-4">공유하기</h1>
-      <article className="grid grid-cols-4 gap-4 mb-12">
+    <section className='sns '>
+      <h1 className='sr-only'>공유하기</h1>
+      <article className='grid grid-cols-4 gap-4'>
         {content.snsList.map((sns) => (
-          <div key={sns} className="flex items-center cursor-pointer">
-            {returnIcon(sns)}
-            <div>{sns}</div>
-          </div>
+          <div key={sns}>{returnIcon(sns)}</div>
         ))}
       </article>
     </section>

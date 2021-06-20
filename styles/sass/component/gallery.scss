@@ -1,0 +1,7 @@
+.gallery {
+  @apply flex flex-col w-full intro-y mt-12;
+}
+
+.gallery__images--grid {
+  @apply grid gap-1 grid-rows-2 grid-cols-3;
+}

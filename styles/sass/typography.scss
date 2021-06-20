@@ -1,18 +1,24 @@
-.main-title {
-  font-family: "KoPub Batang", serif;
-  font-weight: 500;
-  font-size: 1.5rem;
-  line-height: 2;
-  color: white;
-}
-
-.greeting-content {
-  line-break: break-all;
-  margin: 0 20%;
+.section-title--theme1 {
+  margin-bottom: 0.5rem;
+  @apply capitalize text-title-primary--theme1;
 }
 
 .sub-title {
-  font-family: "KoPub Batang", serif;
-  font-size: 1.2rem;
-  font-weight: bold;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 24px;
+  margin-bottom: 2rem;
+}
+
+.text-title-primary--theme1 {
+  color: #af8198;
+  @apply text-center;
+}
+
+.text-primary--theme1 {
+  color: #937f89;
+}
+
+.text-content-theme1 {
+  color: #53434b;
 }

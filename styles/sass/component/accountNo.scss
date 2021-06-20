@@ -1,0 +1,22 @@
+.accountNo {
+  margin: 2rem 2.2rem 5.4rem 5.4rem;
+  @apply intro-y text-center;
+}
+
+.accountNo__button-wrapper {
+  @apply flex flex-col;
+  margin-bottom: 1.5rem;
+}
+
+.accountNo__button {
+  font-size: 0.8rem;
+  font-weight: 500;
+  width: 10.3rem;
+  padding: 0.8rem;
+  color: white;
+  background-color: #937f89;
+}
+
+.accountNo__button:first-child {
+  margin-bottom: 0.5rem;
+}

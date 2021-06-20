@@ -1,52 +1,52 @@
-import React from "react";
-import styled from "@emotion/styled";
-import Image from "../../components/UIElements/Image";
+import React from 'react';
+import styled from '@emotion/styled';
+import Image from '../../components/UIElements/Image';
 
 const DUMMY_IMAGES = [
   {
     id: 0,
-    src: "/couple.jpg",
-    alt: "couple",
+    src: '/couple.jpg',
+    alt: 'couple',
   },
   {
     id: 1,
-    src: "/couple.jpg",
-    alt: "couple",
+    src: '/couple.jpg',
+    alt: 'couple',
   },
   {
     id: 2,
-    src: "/couple.jpg",
-    alt: "couple",
+    src: '/couple.jpg',
+    alt: 'couple',
   },
   {
     id: 3,
-    src: "/couple.jpg",
-    alt: "couple",
+    src: '/couple.jpg',
+    alt: 'couple',
   },
   {
     id: 4,
-    src: "/couple.jpg",
-    alt: "couple",
+    src: '/couple.jpg',
+    alt: 'couple',
   },
   {
     id: 5,
-    src: "/couple.jpg",
-    alt: "couple",
+    src: '/couple.jpg',
+    alt: 'couple',
   },
   {
     id: 6,
-    src: "/couple.jpg",
-    alt: "couple",
+    src: '/couple.jpg',
+    alt: 'couple',
   },
   {
     id: 7,
-    src: "/couple.jpg",
-    alt: "couple",
+    src: '/couple.jpg',
+    alt: 'couple',
   },
   {
     id: 8,
-    src: "/couple.jpg",
-    alt: "couple",
+    src: '/couple.jpg',
+    alt: 'couple',
   },
 ];
 
@@ -58,16 +58,16 @@ const Container = styled.div`
 `;
 
 const Gallery = (props) => (
-  <section className="flex flex-col w-full intro-y mt-12">
-    <h1 className="text-center mb-4 sub-title">갤러리</h1>
-    <div className="grid gap-2 grid-rows-2 grid-cols-3">
+  <section className='gallery'>
+    <h1 className='section-title--theme1'>Gallery</h1>
+    <div className='gallery__images--grid'>
       {DUMMY_IMAGES.map((image) => {
         return (
           <Image
             key={image.id}
             id={image.id}
             src={image.src}
-            alt="couple"
+            alt='couple'
             totalCount={9}
           />
         );

@@ -1,0 +1,9 @@
+.greeting {
+  height: 458px;
+  @apply intro-y text-center;
+}
+
+.greeting-content {
+  line-break: break-all;
+  margin: 0 20%;
+}
