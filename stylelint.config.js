@@ -1,5 +1,7 @@
 module.exports = {
-  extends: ["stylelint-config-standard"],
+  //extends: ["stylelint-config-standard"],
+  //plugins: ["stylelint-prettier"],
+  "extends": "stylelint-config-recommended",
   rules: {
     "no-empty-source": null,
     "at-rule-no-unknown": [
@@ -11,6 +13,7 @@ module.exports = {
           "variants",
           "responsive",
           "screen",
+          "extends"
         ],
       },
     ],
@@ -22,6 +25,10 @@ module.exports = {
     "rule-empty-line-before": null,
     "at-rule-no-unknown": null,
     "no-invalid-double-slash-comments": null,
-    //"scss/at-rule-no-unknown": true,
+    "prettier.stylelintIntegration": true,
+    "block-no-empty": null,
+    "unit-whitelist": ["em", "rem", "s"],
+    'at-rule-no-unknown': null,
+    'scss/at-rule-no-unknown': true,
   },
 };

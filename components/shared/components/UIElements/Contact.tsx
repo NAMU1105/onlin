@@ -1,11 +1,7 @@
 import React from "react";
-import styled from "@emotion/styled";
 import * as Icon from "react-feather";
 
-// TODO: 이름도 프롭스로 전달받아서 뿌리기
-// TODO: 번호 010-000 이런식으로 하이픈 넣어야하는지 확인하기
-
-const Contact = ({ content }) => {
+const Contact = ({ content, themeId }) => {
   console.log("contact: ", content);
 
   const addHiphen = (num) => {
@@ -15,14 +11,15 @@ const Contact = ({ content }) => {
 
     const widthHipen = numArray.join("");
     // console.log(widthHipen);
-
     return widthHipen;
   };
+
+  
 
   return (
     <section
       id="contact"
-      className="contact intro-y w-full mt-12 py-12 bg-contact px-8"
+      className={`icon--${themeId}  bg-contact--${themeId} intro-y w-full mt-12 py-12 px-8`}
     >
       <div id="groom-contact" className="flex items-center justify-between">
         <div className="flex items-center">

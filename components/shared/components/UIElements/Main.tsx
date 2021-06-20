@@ -14,36 +14,36 @@ const Container = styled.section`
   position: absolute !important;
 `;
 
-const Main = ({ content }) => {
-  // console.log("main: ", content);
+const Main = ({ content, themeId }) => {
+  console.log('main themeId: ', themeId);
 
-  const date = new Date(content.date).toLocaleTimeString("en", {
-    month: "2-digit",
-    day: "2-digit",
-    hour: "2-digit",
-    minute: "2-digit",
+  const date = new Date(content.date).toLocaleTimeString('en', {
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
   });
 
   return (
     <>
-      <div className="relative">
+      <div className='relative'>
         <img
-          src="/mainImage.png"
+          src='/mainImage.png'
           // src={content.image}
-          alt="Main wedding image"
-          className=""
+          alt='Main wedding image'
+          className=''
         />
-        <Container className="invitation w-full intro-y bottom-0 left-0 flex flex-col items-center justify-center">
+        <Container className='invitation w-full intro-y bottom-0 left-0 flex flex-col items-center justify-center'>
           {mainDeco}
-          <h3 className="main-title">{content.title}</h3>
-          <div className="main-title__medium flex flex-col">
-            <span className="mr-2" id="groom">
+          <h3 className='main-title'>{content.title}</h3>
+          <div className='main-title__medium flex flex-col'>
+            <span className='mr-2' id='groom'>
               {content.groom}
             </span>
-            <span id="bride">{content.bride}</span>
+            <span id='bride'>{content.bride}</span>
           </div>
-          <span className="mr-4">{date}</span>
-          <span className="mr-4">{content.place.label}</span>
+          <span className='mr-4'>{date}</span>
+          <span className='mr-4'>{content.place.label}</span>
         </Container>
       </div>
     </>

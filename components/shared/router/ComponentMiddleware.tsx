@@ -1,11 +1,12 @@
 import React from "react";
 
-interface AuthMiddleWareProps {
+interface ComponetMiddleWareProps {
   component: React.FC<any>;
   content: any;
+  themeId: string;
 }
 
-const Authmiddleware: React.FC<AuthMiddleWareProps> = ({
+const Componentmiddleware: React.FC<ComponetMiddleWareProps> = ({
   component: Component,
   ...rest
   // layout: Layout,
@@ -16,4 +17,4 @@ const Authmiddleware: React.FC<AuthMiddleWareProps> = ({
     // </Layout>
   );
 };
-export default Authmiddleware;
+export default Componentmiddleware;

@@ -4,7 +4,7 @@ import Map from "../UIElements/Map";
 const address = "DEAR HOTEL 그랜드홀 서울 강남구 압구정로 120";
 
 const Address = (props) => (
-  <section id="address" className="address intro-y mt-12 text-center">
+  <section id="address" className="address w-full intro-y mt-12 text-center">
     <article>
       <h1 className="mb-4 sub-title">오시는 길</h1>
       <h3>{address}</h3>

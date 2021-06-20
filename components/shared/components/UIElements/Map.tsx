@@ -29,17 +29,17 @@ const Map = () => {
       {/* kakao map  */}
       <div className="kakao-map" id="map" ref={mapRef}></div>
       <div className="flex w-full">
-        <a href="" className="w-1/4">
-          <img src="/tmap.jpg" alt="tmap" />
+        <a href="" className="flex-1">
+          <img src="/tmap.jpg" className="map__icon" alt="tmap" />
         </a>
-        <a href="" className="w-1/4">
-          <img src="/kakaoNavi.jpg" alt="kakao navigation" />
+        <a href="" className="flex-1">
+          <img src="/kakaoNavi.jpg" className="map__icon" alt="kakao navigation" />
         </a>
-        <a href="" className="w-1/4">
-          <img src="/naverMap.jpg" alt="naver map" />
+        <a href="" className="flex-1">
+          <img src="/naverMap.jpg" className="map__icon" alt="naver map" />
         </a>
-        <a href="" className="w-1/4">
-          <img src="/daumMap.jpg" alt="daum map" />
+        <a href="" className="flex-1">
+          <img src="/daumMap.jpg" className="map__icon" alt="daum map" />
         </a>
       </div>
     </>

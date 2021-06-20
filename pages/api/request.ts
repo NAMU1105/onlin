@@ -1,151 +1,21 @@
 import axios, { AxiosResponse } from "axios";
 
-export const mockTempleteData = {
-  userId: "호창",
-  createAt: "Sun Apr 18 2021 21:22:15 GMT+0900",
-  updateAt: "Sun Apr 18 2021 21:22:15 GMT+0900",
-  template: {
-    templateName: "template1",
-    templateContent: [
-      //  ! 필수 섹션
-      {
-        sectionName: "Main",
-        content: {
-          image:
-            "https://www.notion.so/image/https%3A%2F%2Flh4.googleusercontent.com%2F-FtvWppKEehM%2FAAAAAAAAAAI%2FAAAAAAAAAAA%2FAMZuucnEN4fM2puFxXzUtFWksnIwxOWadg%2Fphoto.jpg?width=50&userId=a2b03033-47b0-4929-bf8b-7bfe050b137e&cache=v2",
-          title: "파이썬과 코틀린의 결혼식에 초대합니다",
-          date: "2021-06-01T12:00:00+01:00",
-          place: {
-            label: "SW 컨벤션센터 웨딩홀 5층",
-            address: {
-              latitude: 37.571851,
-              longitude: 127.015212,
-            },
-          },
-          groom: "코틀린",
-          bride: "파이썬",
-        },
-      },
-      {
-        sectionName: "Greeting",
-        content: {
-          title: "두 언어의 극적인 결합에 초대합니다.",
-          content:
-            "파이썬의 데이터 분석과\n코틀린의 안드로이드가 만났습니다.\n많은 참석과 축하 부탁드립니다.\n구글만세",
-        },
-      },
-      {
-        sectionName: "Contact",
-        content: {
-          groomContact: "01010203041",
-          brideContact: "01010203041",
-          groomFatherName: "장기용",
-          groomFatherContact: "01010203042",
-          groomMotherName: "선결제",
-          groomMotherContact: "01010203042",
-          brideFatherName: "추가할",
-          brideFatherContact: "01010203043",
-          brideMotherName: "인차운",
-          brideMotherContact: "01010203044",
-        },
-      },
-      {
-        sectionName: "Calendar",
-        content: {
-          date: "2021-06-01T12:00:00+01:00",
-        },
-      },
-      {
-        sectionName: "Map",
-        content: {
-          place: {
-            label: "SW 컨벤션센터 웨딩홀 5층",
-            address: {
-              latitude: 37.571851,
-              longitude: 127.015212,
-            },
-          },
-          contact: "02-2929-2929",
-          subContents: [
-            {
-              title: "버스",
-              content: "4040번, 2929번, 1919번 정류장에서 10분",
-            },
-            { title: "주차", content: "200대 가능" },
-            { title: "지하철", content: "3호선 종로3가역 8번 출구 도보 12분" },
-            {
-              title: "피로연 안내",
-              content: "피로하지 않으므로 피로연은 없습니다.",
-            },
-          ],
-        },
-      },
-      {
-        sectionName: "Gallery",
-        content: {
-          images: [
-            "http://placeimg.com/200/200/any",
-            "http://placeimg.com/200/200/any",
-            "http://placeimg.com/200/200/any",
-            "http://placeimg.com/200/200/any",
-            "http://placeimg.com/200/200/any",
-            "http://placeimg.com/200/200/any",
-            "http://placeimg.com/200/200/any",
-            "http://placeimg.com/200/200/any",
-            "http://placeimg.com/200/200/any",
-          ],
-        },
-      },
-      {
-        sectionName: "Video",
-        content: {
-          src: "https://www.youtube.com/watch?v=RNN-QApJMW0",
-        },
-      },
-      {
-        sectionName: "accountNo",
-        content: {
-          groom: "우리 1002 050 239718",
-          bride: "카카오뱅크 333321323221092",
-        },
-      },
-      {
-        sectionName: "sns",
-        content: {
-          snsList: ["kakao", "facebook", "sms", "twitter"],
-        },
-      },
-    ],
-  },
-};
-
 export const requestTempleteData = async (templeteId: string) => {
   const url = `http://3.138.247.170/api/wedding/detail-public/${templeteId}`;
   try {
-    // const { data } = await axios.get(url);
+    const { data } = await axios.get(url);
+
+    // console.log(data.data);
+
     // return data.data as typeof mockTempleteData;
     // const { data } = await getMockData;
     // const { response } = data;
     // return response as typeof mockTempleteData;
-    return mockTempleteData;
+    return data.data;
+    // return mockTempleteData;
   } catch (e) {
     console.log(e);
   }
 };
 
-const getMockData: Promise<AxiosResponse<any>> = new Promise<AxiosResponse>(
-  (resolve) => {
-    setTimeout(() => {
-      resolve({
-        status: 200,
-        headers: {},
-        config: {},
-        statusText: "",
-        data: {
-          status: 200,
-          response: mockTempleteData,
-        },
-      });
-    }, 500);
-  }
-);
+

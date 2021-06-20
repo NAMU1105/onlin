@@ -2,7 +2,7 @@ import React from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
 
-import { requestTempleteData, mockTempleteData } from "./api/request";
+import { requestTempleteData } from './api/request';
 
 // import WithHead from "../components/shared/components/Hoc/WithHead";
 
@@ -26,8 +26,8 @@ const VARIANT_MAPS: Record<string, React.FC<any>> = {
   Map: Address,
   Gallery,
   Video,
-  accountNo: AccountInfo,
-  sns: SNS,
+  AccountNo: AccountInfo,
+  Sns: SNS,
 };
 
 const Detail = (props) => {
@@ -46,23 +46,34 @@ const Detail = (props) => {
     //   TODO: 로딩 스피너 예쁜걸로 수정하기
     return <p>Loading...</p>;
   }
+  
 
-  // console.log("props.loadedUsers: ", JSON.parse(props.loadedUsers.data));
-  // const data = JSON.parse(props.loadedUsers.data).template.templateContent;
-  const data = props.loadedUsers.template.templateContent;
-  console.log("props.loadedUsers: ", data);
+  // console.log(
+  //   'props.loadedUsers!!!: ',
+  //   JSON.parse(props.loadedUsers)
+  //   // props.loadedUsers
+  // );
+  // const data = JSON.parse(props.loadedUsers.data);
+  const data = JSON.parse(props.loadedUsers.data).template.templateContent;
+  console.log('data!!!: ', data);
+  // console.log('theme_id!!!: ', props.loadedUsers.theme_id);
+
+  // const data = props.loadedUsers;
+  // console.log('props.loadedUsers: ', data.template.templateContent);
+  // return <div>test</div>;
   return (
     <>
       <Head>
         <title>{props.loadedUsers.userId}</title>
         <meta
-          name="description"
+          name='description'
           content={`${props.loadedUsers.userId}의 결혼식에 초대합니다.`}
         />
       </Head>
       {data.map((t, index) => (
         <ComponentMiddleWare
           key={index}
+          themeId={props.loadedUsers.theme_id}
           component={VARIANT_MAPS[t.sectionName]}
           content={t.content}
         />
@@ -103,9 +114,9 @@ export const getStaticPaths = async () => {
   // console.log(pathsWithParams);
 
   const DUMMY_PATH = [
-    { params: { id: "1" } },
-    { params: { id: "2" } },
-    { params: { id: "3" } },
+    { params: { id: '1' } },
+    { params: { id: '2' } },
+    // { params: { id: "3" } },
   ];
 
   return {
