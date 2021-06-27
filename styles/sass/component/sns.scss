@@ -4,3 +4,28 @@
 
   @apply intro-y w-full flex justify-center items-center;
 }
+
+.sns__list {
+  display: flex;
+}
+
+.sns__list__item {
+  cursor: pointer;
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+  clip-path: circle(50% at 50% 50%);
+}
+.sns__list__item--ig {
+  background-color: white;
+}
+.sns__list__item--kakao {
+  background-color: yellow;
+}
+.sns__list__item--link {
+  background-color: white;
+}
+
+.sns__list__item:not(:last-of-type) {
+  margin-right: 1rem;
+}
