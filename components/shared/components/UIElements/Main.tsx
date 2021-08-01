@@ -14,32 +14,85 @@ const Main = ({ content, themeId }) => {
     minute: '2-digit',
   });
 
-  return (
-    <section className='main'>
-      <div className='relative'>
-        <img
-          src='/mainImage.png'
-          // src={content.image}
-          alt='Main wedding image'
-          className='h-screen'
-        />
-        <div className='main__title invitation w-full intro-y bottom-0 left-0 flex flex-col items-center justify-center'>
-          {mainDeco}
-          {/* <h3 className='main-title'>{content.title}</h3> */}
-          <div className='flex flex-col main__title__names'>
-            <span className='text-big mr-2' id='groom'>
-              {content.groom}
-            </span>
-            <span className='text-big' id='bride'>
-              {content.bride}
-            </span>
+  switch (themeId) {
+    case 'template1':
+      return (
+        <section className='main'>
+          <div className='relative'>
+            <img
+              src='/mainImage.png'
+              // src={content.image}
+              alt='Main wedding image'
+              className={`main__image--${themeId}`}
+            />
+            <div className='main__deco--template1 invitation'>
+              {mainDeco}
+              <div className='main__title__names--template1'>
+                <span className='text-big mr-2' id='groom'>
+                  {content.groom}
+                </span>
+                <span className='text-big' id='bride'>
+                  {content.bride}
+                </span>
+              </div>
+              <span className='mr-4'>{date}</span>
+              <span className='mr-4'>{content.place.label}</span>
+            </div>
           </div>
-          <span className='mr-4'>{date}</span>
-          <span className='mr-4'>{content.place.label}</span>
-        </div>
-      </div>
-    </section>
-  );
+        </section>
+      );
+    case 'template2':
+      return (
+        <section className='main--template2'>
+          <div className='main__text_wrapper'>
+            <div className='main__title__names--template2'>
+              <span className='' id='groom'>
+                {content.groom}
+              </span>
+              <span className='' id='bride'>
+                {content.bride}
+              </span>
+            </div>
+            <span className='main__date--template--2'>{date}</span>
+          </div>
+
+          <img
+            src='/mainImage.png'
+            // src={content.image}
+            alt='Main wedding image'
+            className='main__image--template2'
+          />
+          <span className='main__place'>{content.place.label}</span>
+        </section>
+      );
+
+    // template 3
+    default:
+      return (
+        <section className='main'>
+          <div className='relative'>
+            <img
+              src='/mainImage.png'
+              alt='Main wedding image'
+              className={`main__image--${themeId}`}
+            />
+            <div className='main__text-wrapper--3'>
+              {mainDeco}
+              <div className='main__title__names--template1'>
+                <span className='text-big mr-2' id='groom'>
+                  {content.groom}
+                </span>
+                <span className='text-big' id='bride'>
+                  {content.bride}
+                </span>
+              </div>
+              <span className='mr-4'>{date}</span>
+              <span className='mr-4'>{content.place.label}</span>
+            </div>
+          </div>
+        </section>
+      );
+  }
 };
 
 const mainDeco = (

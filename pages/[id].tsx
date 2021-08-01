@@ -33,38 +33,16 @@ const VARIANT_MAPS: Record<string, React.FC<any>> = {
 
 const Detail = (props) => {
   const router = useRouter();
-  // console.log(props);
-  // console.log(sampleData);
-  // console.log(
-  //   sampleData.template.templateContent.map((t) => console.log(t.sectionName))
-  // );
-
-  //   console.log(router.pathname);
-  //   console.log(router.query);
-  //   console.log(router.query.id);
 
   if (!props.loadedUsers) {
     //   TODO: 로딩 스피너 예쁜걸로 수정하기
     return <p>Loading...</p>;
   }
 
-  // console.log(
-  //   'props.loadedUsers!!!: ',
-  //   JSON.parse(props.loadedUsers)
-  //   // props.loadedUsers
-  // );
   const data = JSON.parse(props.loadedUsers.data).template.templateContent;
-  // const data = props.loadedUsers.data;
   const userData = JSON.parse(props.loadedUsers.data);
   const templateId = JSON.parse(props.loadedUsers.data).template.templateName;
-  // console.log('userData: ', userData);
-  console.log('data!!!: ', data);
-  // console.log(JSON.parse(props.loadedUsers.data).template.templateName);
-  // return <h1>testing</h1>;
-  // console.log('theme_id!!!: ', props.loadedUsers.theme_id);
 
-  // const data = props.loadedUsers;
-  // return <div>test</div>;
   return (
     <>
       <Head>
@@ -75,15 +53,6 @@ const Detail = (props) => {
         />
       </Head>
       {data.map((t, index) => {
-        // console.log({ t });
-        // console.log({ templateId });
-        console.log(t.sectionName);
-        // console.log(VARIANT_MAPS[t.sectionName]);
-
-        // if (!VARIANT_MAPS[t.sectionName]) {
-        // return <h1>no</h1>;
-        // } else {
-
         return (
           <ComponentMiddleWare
             key={index}
@@ -101,8 +70,6 @@ const Detail = (props) => {
 
 async function getData(id: string) {
   const data = await requestTempleteData(id);
-  // console.log(data);
-  // const data = mockTempleteData;
   return data;
 }
 
@@ -145,8 +112,3 @@ export const getStaticPaths = async () => {
 };
 
 export default Detail;
-// export default WithHead(
-//   Detail,
-//   `${sampleData.userId}'s wedding day`,
-//   `${sampleData.userId}님의 소중한 결혼식 초대장`
-// );
