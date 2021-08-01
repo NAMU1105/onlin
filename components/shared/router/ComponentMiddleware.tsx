@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 interface ComponetMiddleWareProps {
   component: React.FC<any>;
@@ -11,6 +11,8 @@ const Componentmiddleware: React.FC<ComponetMiddleWareProps> = ({
   ...rest
   // layout: Layout,
 }) => {
+  console.log(Component);
+
   return (
     // <Layout>
     <Component {...rest} />

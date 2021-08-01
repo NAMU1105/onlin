@@ -27,8 +27,8 @@ const VARIANT_MAPS: Record<string, React.FC<any>> = {
   Map: Address,
   Gallery,
   Video,
-  AccountNo: AccountInfo,
-  Sns: SNS,
+  accountNo: AccountInfo,
+  sns: SNS,
 };
 
 const Detail = (props) => {
@@ -53,31 +53,47 @@ const Detail = (props) => {
   //   JSON.parse(props.loadedUsers)
   //   // props.loadedUsers
   // );
-  // const data = JSON.parse(props.loadedUsers.data);
   const data = JSON.parse(props.loadedUsers.data).template.templateContent;
+  // const data = props.loadedUsers.data;
+  const userData = JSON.parse(props.loadedUsers.data);
+  const templateId = JSON.parse(props.loadedUsers.data).template.templateName;
+  // console.log('userData: ', userData);
   console.log('data!!!: ', data);
+  // console.log(JSON.parse(props.loadedUsers.data).template.templateName);
+  // return <h1>testing</h1>;
   // console.log('theme_id!!!: ', props.loadedUsers.theme_id);
 
   // const data = props.loadedUsers;
-  // console.log('props.loadedUsers: ', data.template.templateContent);
   // return <div>test</div>;
   return (
     <>
       <Head>
-        <title>{props.loadedUsers.userId}</title>
+        <title>{userData.userId}</title>
         <meta
           name='description'
-          content={`${props.loadedUsers.userId}의 결혼식에 초대합니다.`}
+          content={`${userData.userId}의 결혼식에 초대합니다.`}
         />
       </Head>
-      {data.map((t, index) => (
-        <ComponentMiddleWare
-          key={index}
-          themeId={props.loadedUsers.theme_id}
-          component={VARIANT_MAPS[t.sectionName]}
-          content={t.content}
-        />
-      ))}
+      {data.map((t, index) => {
+        // console.log({ t });
+        // console.log({ templateId });
+        console.log(t.sectionName);
+        // console.log(VARIANT_MAPS[t.sectionName]);
+
+        // if (!VARIANT_MAPS[t.sectionName]) {
+        // return <h1>no</h1>;
+        // } else {
+
+        return (
+          <ComponentMiddleWare
+            key={index}
+            themeId={templateId}
+            component={VARIANT_MAPS[t.sectionName]}
+            content={t.content}
+          />
+        );
+        // }
+      })}
       <Footer />
     </>
   );
@@ -95,6 +111,7 @@ export const getStaticProps = async (context) => {
   const userId = params.id;
 
   const user = await getData(userId);
+  console.log({ user });
 
   //   invalid한 url일 경우 404페이지 띄움
   if (!user) {
@@ -117,7 +134,7 @@ export const getStaticPaths = async () => {
   const DUMMY_PATH = [
     { params: { id: '1' } },
     { params: { id: '2' } },
-    // { params: { id: "3" } },
+    { params: { id: '3' } },
   ];
 
   return {
