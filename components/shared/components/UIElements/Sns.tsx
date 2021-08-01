@@ -10,7 +10,7 @@ import LinkIcon from '../../../../public/icons/link-2.svg';
 
 //  TODO: 공유하기 기능 추가
 const Sns = ({ content }) => {
-  console.log('sns: ', content);
+  // console.log('sns: ', content);
 
   return (
     <section className='sns '>

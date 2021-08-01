@@ -5,7 +5,7 @@ import React from 'react';
 // import Deco from "../../../../public/mainSectionDeco.svg"
 
 const Main = ({ content, themeId }) => {
-  console.log('main themeId: ', themeId);
+  // console.log('main themeId: ', themeId);
 
   const date = new Date(content.date).toLocaleTimeString('en', {
     month: '2-digit',

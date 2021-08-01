@@ -12,7 +12,7 @@ const addHiphen = (num) => {
 };
 
 const Contact = ({ content, themeId }) => {
-  console.log('contact: ', content);
+  // console.log('contact: ', content);
 
   return (
     <section

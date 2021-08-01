@@ -1,6 +1,16 @@
-.section-title--theme1 {
+.section-title--template1 {
   margin-bottom: 0.5rem;
-  @apply capitalize text-title-primary--theme1;
+  @apply capitalize;
+}
+.section-title--template2 {
+  margin-bottom: 0.5rem;
+  color: $theme-text-2;
+  @apply capitalize;
+}
+.section-title--template3 {
+  margin-bottom: 0.5rem;
+  color: $theme-text-3;
+  @apply capitalize;
 }
 
 .sub-title {
@@ -10,15 +20,11 @@
   margin-bottom: 2rem;
 }
 
-.text-title-primary--theme1 {
+.text-title-primary--template1 {
   color: #af8198;
   @apply text-center;
 }
 
-.text-primary--theme1 {
+.text-primary--template1 {
   color: #937f89;
-}
-
-.text-content-theme1 {
-  color: #53434b;
 }

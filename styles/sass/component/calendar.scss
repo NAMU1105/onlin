@@ -6,14 +6,14 @@
   @apply rounded-sm;
 }
 
-.theme-1 .react-calendar {
+.theme-text-1 .react-calendar {
   border: 10px solid #9d858b;
 }
-.theme-2 .react-calendar {
-  border: 10px solid #E9E7E5;
+.theme-text-2 .react-calendar {
+  border: 10px solid #e9e7e5;
 }
-.theme-3 .react-calendar {
-  border: 10px solid #E9EDE7;
+.theme-text-3 .react-calendar {
+  border: 10px solid #e9ede7;
 }
 
 .react-calendar--doubleView {
@@ -61,17 +61,17 @@
   text-decoration: none !important;
 }
 
-.theme-1 .react-calendar__month-view__weekdays__weekday:nth-child(6),
-.theme-1 .react-calendar__month-view__weekdays__weekday:nth-child(7) {
+.theme-text-1 .react-calendar__month-view__weekdays__weekday:nth-child(6),
+.theme-text-1 .react-calendar__month-view__weekdays__weekday:nth-child(7) {
   color: #9d858b;
 }
-.theme-2 .react-calendar__month-view__weekdays__weekday:nth-child(6),
-.theme-2 .react-calendar__month-view__weekdays__weekday:nth-child(7) {
-  color: #E9E7E5;
+.theme-text-2 .react-calendar__month-view__weekdays__weekday:nth-child(6),
+.theme-text-2 .react-calendar__month-view__weekdays__weekday:nth-child(7) {
+  color: #e9e7e5;
 }
-.theme-3 .react-calendar__month-view__weekdays__weekday:nth-child(6),
-.theme-3 .react-calendar__month-view__weekdays__weekday:nth-child(7) {
-  color: #E9EDE7;
+.theme-text-3 .react-calendar__month-view__weekdays__weekday:nth-child(6),
+.theme-text-3 .react-calendar__month-view__weekdays__weekday:nth-child(7) {
+  color: #e9ede7;
 }
 
 .react-calendar__month-view__weekNumbers {
@@ -116,18 +116,18 @@
   background: none;
 }
 
-.theme-1 .react-calendar__tile--active {
+.theme-text-1 .react-calendar__tile--active {
   background: #9d858b;
   color: white;
   clip-path: circle(50% at 50% 50%);
 }
-.theme-2 .react-calendar__tile--active {
-  background: #AF8F81;
+.theme-text-2 .react-calendar__tile--active {
+  background: #af8f81;
   color: white;
   clip-path: circle(50% at 50% 50%);
 }
-.theme-3 .react-calendar__tile--active {
-  background: #32482B;
+.theme-text-3 .react-calendar__tile--active {
+  background: #32482b;
   color: white;
   clip-path: circle(50% at 50% 50%);
 }
