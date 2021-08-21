@@ -78,7 +78,6 @@ export const getStaticProps = async (context) => {
   const userId = params.id;
 
   const user = await getData(userId);
-  // console.log({ user });
 
   //   invalid한 url일 경우 404페이지 띄움
   if (!user) {
