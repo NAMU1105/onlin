@@ -51,8 +51,6 @@ import Image from '../../components/UIElements/Image';
 // ];
 
 const Gallery = ({ content, themeId }) => {
-  console.log({ content });
-
   return (
     <section className='gallery'>
       <h1 className={`section-title--${themeId}`}>Gallery</h1>

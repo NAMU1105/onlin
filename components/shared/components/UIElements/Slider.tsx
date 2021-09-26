@@ -88,7 +88,7 @@ const SliderImage = (props) => {
         {props.images.map((image, idx) => {
           return (
             <Image
-              key={`${image}_${idx}`}
+              key={`slider_${image}_${idx}`}
               id={`${image}_${idx}`}
               src={image}
               images={props.images}

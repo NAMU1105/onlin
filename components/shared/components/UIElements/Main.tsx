@@ -25,7 +25,7 @@ const Main = ({ content, themeId }) => {
               alt='Main wedding image'
               className={`main__image--${themeId}`}
             />
-            <div className={`main__deco--${themeId}s invitation`}>
+            <div className={`main__deco--${themeId} invitation`}>
               {mainDeco}
               <div className={`main__title__names--${themeId}`}>
                 <span className='text-big mr-2' id='groom'>
