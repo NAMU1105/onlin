@@ -6,7 +6,7 @@ const address = 'DEAR HOTEL 그랜드홀 서울 강남구 압구정로 120';
 const Address = (props) => (
   <section id='address' className='address'>
     <article>
-      <h1 className='section-title--theme1'>오시는 길</h1>
+      <h1 className='section-title--template1'>오시는 길</h1>
       {/* <h3>{address}</h3> */}
       {/* <h5>버스 / 지하철</h5>
       <p>

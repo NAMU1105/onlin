@@ -7,7 +7,7 @@
   margin-bottom: 1.5rem;
 }
 
-.accountNo__button {
+.accountNo__button--template1 {
   font-size: 0.8rem;
   font-weight: 500;
   width: 10.3rem;
@@ -16,6 +16,32 @@
   background-color: #937f89;
 }
 
-.accountNo__button:first-child {
+.accountNo__button--template1:first-child {
+  margin-bottom: 0.5rem;
+}
+
+.accountNo__button--template2 {
+  font-size: 0.8rem;
+  font-weight: 500;
+  width: 10.3rem;
+  padding: 0.8rem;
+  color: white;
+  background-color: #6a6158;
+}
+
+.accountNo__button--template2:first-child {
+  margin-bottom: 0.5rem;
+}
+
+.accountNo__button--template3 {
+  font-size: 0.8rem;
+  font-weight: 500;
+  width: 10.3rem;
+  padding: 0.8rem;
+  color: white;
+  background-color: #445b45;
+}
+
+.accountNo__button--template3:first-child {
   margin-bottom: 0.5rem;
 }

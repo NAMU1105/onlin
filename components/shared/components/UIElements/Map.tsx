@@ -6,7 +6,7 @@ declare global {
   }
 }
 
-const Map = () => {
+const Map = ({ content, themeId }) => {
   // const Map = ({ center, level = 2 }) => {
   const mapRef = useRef();
   //   const { lat, lng } = center;
@@ -46,7 +46,7 @@ const Map = () => {
           <img src='/daumMap.jpg' className='map__icon' alt='daum map' />
         </a>
       </div> */}
-      <div className='kakao-map__connect kakao-map__connect--template1'>
+      <div className={`kakao-map__connect kakao-map__connect--${themeId}`}>
         <span className='ml-auto '>카카오맵으로 보기</span>
         <span className='kakao-map__connect__arrow'>▶</span>
       </div>

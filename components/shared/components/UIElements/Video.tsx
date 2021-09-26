@@ -3,12 +3,12 @@ import React from 'react';
 
 const baseUrl = 'https://www.youtube.com/embed/';
 
-const Video = ({ content }) => {
+const Video = ({ content, themeId }) => {
   console.log(content);
 
   return (
-    <section className='video '>
-      <h1 className='section-title--theme1'>Video</h1>
+    <section className='video'>
+      <h1 className={`section-title--${themeId}`}>Video</h1>
       <iframe
         className='video__player'
         title='tsdniktHmOU'

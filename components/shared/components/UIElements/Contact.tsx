@@ -22,7 +22,7 @@ const Contact = ({ content, themeId }) => {
       <div id='groom-contact' className='flex items-center justify-between'>
         <div className='flex items-center'>
           {/* <img className="w-6 mr-8" src="/groom.png" alt="groom" /> */}
-          <span className='text-primary--theme1'>신랑</span>
+          <span className={`text-primary--${themeId}`}>신랑</span>
         </div>
         <div className='flex items-center'>
           <a className='mr-5' href={`tel://${addHiphen(content.groomContact)}`}>

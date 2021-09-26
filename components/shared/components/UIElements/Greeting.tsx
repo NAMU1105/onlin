@@ -1,8 +1,6 @@
 import React from 'react';
 
 const Greeting = ({ content, themeId }) => {
-  console.log({ themeId });
-
   return (
     <section id='greeting' className='greeting section-padding-big'>
       <h1 className={`section-title--${themeId} `}>greeting</h1>

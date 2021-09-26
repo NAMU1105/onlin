@@ -57,22 +57,25 @@ const Container = styled.div`
   grid-template-columns: repeat(3, 1fr);
 `;
 
-const Gallery = (props) => (
-  <section className='gallery'>
-    <h1 className='section-title--theme1'>Gallery</h1>
-    <div className='gallery__images--grid'>
-      {DUMMY_IMAGES.map((image) => {
-        return (
-          <Image
-            key={image.id}
-            id={image.id}
-            src={image.src}
-            alt='couple'
-            totalCount={9}
-          />
-        );
-      })}
-    </div>
-  </section>
-);
+const Gallery = ({ content, themeId }) => {
+  return (
+    <section className='gallery'>
+      <h1 className={`section-title--${themeId}`}>Gallery</h1>
+      <div className='gallery__images--grid'>
+        {DUMMY_IMAGES.map((image) => {
+          return (
+            <Image
+              key={image.id}
+              id={image.id}
+              src={image.src}
+              alt='couple'
+              totalCount={9}
+            />
+          );
+        })}
+      </div>
+    </section>
+  );
+};
+
 export default Gallery;

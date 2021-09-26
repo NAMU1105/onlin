@@ -8,8 +8,8 @@ import IGIcon from '../../../../public/icons/Instagram_Glyph_Gradient_RGB.svg';
 import KakaoIcon from '../../../../public/icons/kakao.svg';
 import LinkIcon from '../../../../public/icons/link-2.svg';
 
-//  TODO: 공유하기 기능 추가
-const Sns = ({ content }) => {
+//  TODO: 공유하기 기능 추가, 공유하기 링크 있는 아이콘만 보여주기
+const Sns = ({ content, themeId }) => {
   // console.log('sns: ', content);
 
   return (
