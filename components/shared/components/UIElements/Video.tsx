@@ -4,8 +4,6 @@ import React from 'react';
 const baseUrl = 'https://www.youtube.com/embed/';
 
 const Video = ({ content, themeId }) => {
-  console.log(content);
-
   return (
     <section className='video'>
       <h1 className={`section-title--${themeId}`}>Video</h1>
