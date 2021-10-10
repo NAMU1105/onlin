@@ -24,7 +24,6 @@ const Map = ({ content, themeId }) => {
       level: 2, //지도의 레벨(확대, 축소 정도)
     };
 
-    // TODO: 장소 아이디 받을 수 있는지 물어보기
     const map = new window.kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
   }, []);
 

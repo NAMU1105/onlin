@@ -1,9 +1,9 @@
 import React from 'react';
 import Head from 'next/head';
 
-import Footer from '../shared/components/UIElements/Footer';
-import Header from '../shared/components/Navigation/Header';
-const KAKAOMAP_KEY = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.REACT_APP_KAKAOMAP_API_KEY}`;
+// import Footer from '../shared/components/UIElements/Footer';
+// import Header from '../shared/components/Navigation/Header';
+// const KAKAOMAP_KEY = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.REACT_APP_KAKAOMAP_API_KEY}`;
 
 const Layout = ({ children }) => {
   return (
