@@ -11,7 +11,7 @@
   height: 2.25rem;
   font-size: 12px;
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   padding: 0 0.5rem;
 }
@@ -28,8 +28,8 @@
   background-color: #e9ede7;
 }
 
+/*  @apply ml-auto;  */
 .kakao-map__connect__arrow {
-  /*  @apply ml-auto;  */
   font-size: 1px;
   color: #53434b;
 }

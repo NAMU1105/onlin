@@ -13,9 +13,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  /* justify-content: center; */
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -37,8 +35,8 @@
   background-color: #e9ede7;
 }
 
+/*  @apply ml-auto;  */
 .kakao-map__connect__arrow {
-  /*  @apply ml-auto;  */
   font-size: 1px;
   color: #53434b;
 }
