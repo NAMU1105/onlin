@@ -41,3 +41,11 @@
   animation: 0.3s slideUp ease-out 0.433333s;
   animation-fill-mode: forwards;
 }
+
+.slick-prev:before,
+.slick-next:before {
+  font-size: 50px !important;
+}
+.slick-prev {
+  left: -55px !important;
+}

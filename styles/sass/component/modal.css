@@ -58,4 +58,13 @@
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
+
+.slick-prev:before,
+.slick-next:before {
+  font-size: 50px !important;
+}
+
+.slick-prev {
+  left: -55px !important;
+}
 /*# sourceMappingURL=modal.css.map */
