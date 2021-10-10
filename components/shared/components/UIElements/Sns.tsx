@@ -18,6 +18,11 @@ const Sns = ({ content, themeId }) => {
   }, []);
 
   const share = (p: 'facebook' | 'kakao' | 'sms') => {
+    if (p === 'facebook') {
+      window.open('http://www.facebook.com/sharer.php?u=www.naver.com');
+      return;
+    }
+
     if (navigator.share) {
       navigator
         .share({
@@ -49,12 +54,12 @@ const Sns = ({ content, themeId }) => {
         </li>)} */}
         {content.snsList.includes('kakao') && (
           <li className='sns__list__item sns__list__item--kakao'>
-            <KakaoIcon className='absolute w-full top-1/4' />
+            <KakaoIcon className='absolute w-full top-1/3' />
           </li>
         )}
         {content.snsList.includes('sms') && (
           <li className='sns__list__item sns__list__item--link'>
-            <LinkIcon className='absolute w-full top-2.5' />
+            <LinkIcon className='absolute w-full top-3' />
           </li>
         )}
       </ul>
