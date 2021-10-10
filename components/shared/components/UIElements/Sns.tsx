@@ -26,33 +26,37 @@ const Sns = ({ content, themeId }) => {
     // });
 
     window.Kakao.init('d00c50badc5a2685a0229ce581e51379');
-    window.Kakao.Link.sendDefault({
-      objectType: 'feed',
-      content: {
-        title: '',
-        description: '',
-        imageUrl: '',
-        link: {
-          mobileWebUrl: currentLocation,
-          webUrl: currentLocation,
-        },
-      },
-      social: {
-        likeCount: 10,
-        commentCount: 20,
-        sharedCount: 30,
-      },
-      buttons: [
-        {
-          title: '게시글확인',
-          link: {
-            mobileWebUrl: currentLocation,
-            webUrl: currentLocation,
-          },
-        },
-      ],
-      serverCallbackArgs: `{"current": "${currentLocation}"}`,
+    window.Kakao.Link.sendScrap({
+      requestUrl: currentLocation,
     });
+
+    // window.Kakao.Link.sendDefault({
+    //   objectType: 'feed',
+    //   content: {
+    //     title: '',
+    //     description: '',
+    //     imageUrl: '',
+    //     link: {
+    //       mobileWebUrl: currentLocation,
+    //       webUrl: currentLocation,
+    //     },
+    //   },
+    //   social: {
+    //     likeCount: 10,
+    //     commentCount: 20,
+    //     sharedCount: 30,
+    //   },
+    //   buttons: [
+    //     {
+    //       title: '게시글확인',
+    //       link: {
+    //         mobileWebUrl: currentLocation,
+    //         webUrl: currentLocation,
+    //       },
+    //     },
+    //   ],
+    //   serverCallbackArgs: `{"current": "${currentLocation}"}`,
+    // });
   }
 
   const share = (p: 'facebook' | 'kakao' | 'sms') => {
