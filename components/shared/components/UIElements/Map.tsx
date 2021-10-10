@@ -7,7 +7,7 @@ declare global {
 }
 
 const Map = ({ content, themeId }) => {
-  // console.log({ themeId });
+  console.log({ content });
 
   // const Map = ({ center, level = 2 }) => {
   const mapRef = useRef();
@@ -26,14 +26,24 @@ const Map = ({ content, themeId }) => {
       level: 2, //지도의 레벨(확대, 축소 정도)
     };
 
+    // TODO: 장소 아이디 받을 수 있는지 물어보기
     const map = new window.kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
   }, []);
+
+  const openKakaoLink = () => {
+    window.open(
+      `https://map.kakao.com/link/map/${content.place.address.latitude},${content.place.address.longitude}`
+    );
+  };
 
   return (
     <>
       {/* kakao map  */}
       <div className='kakao-map' id='map' ref={mapRef}></div>
-      <div className={`kakao-map__connect kakao-map__connect--${themeId}`}>
+      <div
+        className={`kakao-map__connect kakao-map__connect--${themeId}`}
+        onClick={openKakaoLink}
+      >
         <span className='ml-auto'>카카오맵으로 보기</span>
         <span className='kakao-map__connect__arrow'>▶</span>
       </div>

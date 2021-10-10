@@ -1,0 +1,9 @@
+.greeting {
+  @apply intro-y text-center;
+}
+
+.greeting-content {
+  line-break: break-all;
+  margin: 0 20%;
+}
+/*# sourceMappingURL=greeting.css.map */

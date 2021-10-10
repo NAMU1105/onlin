@@ -98,8 +98,8 @@ export const getStaticPaths = async () => {
   // console.log(pathsWithParams);
 
   const DUMMY_PATH = [
-    { params: { id: '1' } },
-    { params: { id: '2' } },
+    // { params: { id: '1' } },
+    // { params: { id: '2' } },
     { params: { id: '3' } },
   ];
 

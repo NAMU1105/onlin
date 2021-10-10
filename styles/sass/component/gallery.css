@@ -1,0 +1,9 @@
+.gallery {
+  @apply flex flex-col w-full intro-y mt-12;
+  padding: 1.5rem 1.25rem 1.5rem 1.25rem;
+}
+
+.gallery__images--grid {
+  @apply grid gap-1 grid-rows-2 grid-cols-3;
+}
+/*# sourceMappingURL=gallery.css.map */

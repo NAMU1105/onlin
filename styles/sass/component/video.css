@@ -1,0 +1,10 @@
+.video {
+  @apply flex flex-col w-full mt-12 intro-y text-center;
+  padding: 1.5rem 1.25rem 1.5rem 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.video__player {
+  @apply w-full;
+}
+/*# sourceMappingURL=video.css.map */

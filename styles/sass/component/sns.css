@@ -1,0 +1,37 @@
+.sns {
+  height: 4rem;
+  background-color: #585155;
+  @apply intro-y w-full flex justify-center items-center;
+}
+
+.sns__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.sns__list__item {
+  cursor: pointer;
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+  -webkit-clip-path: circle(50% at 50% 50%);
+          clip-path: circle(50% at 50% 50%);
+}
+
+.sns__list__item--ig {
+  background-color: white;
+}
+
+.sns__list__item--kakao {
+  background-color: yellow;
+}
+
+.sns__list__item--link {
+  background-color: white;
+}
+
+.sns__list__item:not(:last-of-type) {
+  margin-right: 1rem;
+}
+/*# sourceMappingURL=sns.css.map */
