@@ -16,6 +16,11 @@ const Layout = ({ children }) => {
           type='text/javascript'
           src='//dapi.kakao.com/v2/maps/sdk.js?appkey=d00c50badc5a2685a0229ce581e51379'
         ></script>
+        <script
+          defer
+          type='text/javascript'
+          src='https://developers.kakao.com/sdk/js/kakao.js'
+        ></script>
         {/* <!-- services 라이브러리 불러오기 --> */}
         {/* <script
           type="text/javascript"
