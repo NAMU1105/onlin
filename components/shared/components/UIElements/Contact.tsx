@@ -11,7 +11,9 @@ const addHiphen = (num) => {
   return widthHipen;
 };
 
-const Contact = ({ content, themeId }) => {
+const Contact = ({ content, themeId, extraData }) => {
+  console.log({ extraData });
+
   return (
     <section
       id='contact'
@@ -20,9 +22,10 @@ const Contact = ({ content, themeId }) => {
       <div id='groom-contact' className='flex items-center justify-between'>
         <div className='flex items-center'>
           {/* <img className="w-6 mr-8" src="/groom.png" alt="groom" /> */}
-          <span className={`text-primary--${themeId}`}>신랑</span>
-          {/* <span className={`text-primary-bold--${themeId}`}>신랑이름</span> */}
-          {/* 신랑, 신부 이름 서버에서 안 받음 */}
+          <span className={`text-primary--${themeId} mr-5`}>신랑</span>
+          <span className={`text-primary-bold--${themeId}`}>
+            {extraData.groom}
+          </span>
         </div>
         <div className={`flex items-center  color-primary--${themeId}`}>
           <a
@@ -52,7 +55,10 @@ const Contact = ({ content, themeId }) => {
       >
         <div className='flex items-center'>
           {/* <img className="w-6 mr-8" src="/bride.png" alt="groom" /> */}
-          <span className={`text-primary--${themeId}`}>신부</span>
+          <span className={`text-primary--${themeId} mr-5`}>신부</span>
+          <span className={`text-primary-bold--${themeId}`}>
+            {extraData.bride}
+          </span>
         </div>
         <div className={`flex items-center color-primary--${themeId}`}>
           <a
