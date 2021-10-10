@@ -18,8 +18,8 @@ const Main = ({ content, themeId }) => {
         <section className='main'>
           <div className='relative'>
             <img
-              src='/mainImage.png'
-              // src={content.image}
+              // src='/mainImage.png'
+              src={content.image}
               alt='Main wedding image'
               className={`main__image--${themeId}`}
             />
