@@ -5,7 +5,6 @@ const baseUrl = 'https://www.youtube.com/embed/';
 
 const Video = ({ content, themeId }) => {
   const [url, setUrl] = useState<string>('');
-  console.log({ content });
 
   useEffect(() => {
     const url = content.src.split('watch?v=')[1];

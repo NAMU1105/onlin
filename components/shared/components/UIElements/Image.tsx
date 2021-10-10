@@ -22,7 +22,10 @@ const Image = ({ id, src, alt, images, totalCount }) => {
     <>
       {isModalOpened && (
         <>
-          <Backdrop>
+          <Backdrop
+            isShow={isModalOpened}
+            // onClick={() => setModalOpened(false)}
+          >
             {/* <Backdrop onClick={toggleModalOpen}> */}
             <Slider images={images} onClick={toggleModalOpen} />
           </Backdrop>

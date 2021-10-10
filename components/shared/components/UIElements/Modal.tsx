@@ -1,10 +1,12 @@
 import React, { useRef, useState, useEffect } from 'react';
-import styled from '@emotion/styled';
-import { css } from '@emotion/react';
-import Image from '../UIElements/Image';
 
-const Modal = (props) => {
-  return <div>modal</div>;
+interface ModalProps {
+  content: any;
+  design?: 'template1' | 'template2' | 'template3';
+}
+
+const Modal: React.FC<ModalProps> = (props: ModalProps) => {
+  return <div className={`modal modal--${props.design}`}>{props.content}</div>;
 };
 
 export default Modal;
