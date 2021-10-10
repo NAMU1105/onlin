@@ -4,6 +4,7 @@ interface ComponetMiddleWareProps {
   component: React.FC<any>;
   content: any;
   themeId: string;
+  extraData?: any;
 }
 
 const Componentmiddleware: React.FC<ComponetMiddleWareProps> = ({

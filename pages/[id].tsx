@@ -46,10 +46,27 @@ const Detail = (props) => {
   return (
     <>
       <Head>
-        <title>{userData.userId}</title>
+        <title>{userData.template.templateContent[0].content.title}</title>
         <meta
           name='description'
-          content={`${userData.userId}의 결혼식에 초대합니다.`}
+          content={userData.template.templateContent[0].content.title}
+        />
+        <meta
+          name='description'
+          content={userData.template.templateContent[0].content.title}
+        />
+        <meta
+          property='og: title'
+          content={userData.template.templateContent[0].content.title}
+        />
+        <meta property='og: url' content='url' />
+        <meta
+          property='og: description'
+          content={userData.template.templateContent[0].content.title}
+        />
+        <meta
+          property='og: image'
+          content={userData.template.templateContent[0].content.image}
         />
       </Head>
       {data.map((t, index) => {
@@ -59,6 +76,7 @@ const Detail = (props) => {
             themeId={templateId}
             component={VARIANT_MAPS[t.sectionName]}
             content={t.content}
+            extraData={userData.template.templateContent[0].content}
           />
         );
         // }

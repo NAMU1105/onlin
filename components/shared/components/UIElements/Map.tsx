@@ -7,8 +7,6 @@ declare global {
 }
 
 const Map = ({ content, themeId }) => {
-  console.log({ content });
-
   // const Map = ({ center, level = 2 }) => {
   const mapRef = useRef();
   //   const { lat, lng } = center;

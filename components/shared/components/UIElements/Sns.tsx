@@ -13,7 +13,9 @@ declare global {
     Kakao: any;
   }
 }
-const Sns = ({ content, themeId }) => {
+const Sns = ({ content, themeId, extraData }) => {
+  console.log({ extraData });
+
   const [currentLocation, setCurrentLocation] = useState<string>('');
   useEffect(() => {
     if (!window) return;
@@ -43,10 +45,9 @@ const Sns = ({ content, themeId }) => {
     window.Kakao.Link.sendDefault({
       objectType: 'feed',
       content: {
-        title: '청첩장',
-        description: '올린의 청첩장입니다.',
-        imageUrl:
-          'https://www.notion.so/nobonobopurin/20210926-64126cdff0e9430e903e15491c1761dc#d77d29e1ad694cb78dcf622efe5d281d',
+        title: '저희 결혼합니다.',
+        description: extraData.title,
+        imageUrl: extraData.image,
         link: {
           mobileWebUrl: currentLocation,
           webUrl: currentLocation,
@@ -59,7 +60,7 @@ const Sns = ({ content, themeId }) => {
       // },
       buttons: [
         {
-          title: '청첩장',
+          title: '청첩장보러가기',
           link: {
             mobileWebUrl: currentLocation,
             webUrl: currentLocation,
