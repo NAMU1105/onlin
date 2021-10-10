@@ -10,6 +10,10 @@ module.exports = {
   //     };
   //     return config;
   //   },
+  env: {
+    customKey: 'my-value',
+  },
+
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
     prependData: `@import "./variables.scss";`,

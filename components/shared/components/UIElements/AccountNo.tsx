@@ -4,8 +4,6 @@ import Modal from './Modal';
 import Toast from './ToastMessage';
 
 const AccountNo = ({ content, themeId }) => {
-  console.log({ content });
-
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [isToastOpen, setIsToastOpen] = useState<boolean>(false);
   const [modalContent, setModalContent] = useState<string | ReactElement>('');

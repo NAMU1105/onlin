@@ -49,7 +49,6 @@ const Sns = ({ content, themeId, extraData }) => {
     }
 
     window.Kakao.init(process.env.REACT_APP_KAKAOMAP_API_KEY);
-    // window.Kakao.init('d00c50badc5a2685a0229ce581e51379');
 
     window.Kakao.Link.sendDefault({
       objectType: 'feed',
