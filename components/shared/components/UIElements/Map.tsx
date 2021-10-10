@@ -47,7 +47,7 @@ const Map = ({ content, themeId }) => {
         onClick={openKakaoLink}
       >
         <span className='ml-auto'>카카오맵으로 보기</span>
-        <span className='kakao-map__connect__arrow'>▶</span>
+        <span className='kakao-map__connect__arrow'>&#9654;</span>
       </div>
     </>
   );
