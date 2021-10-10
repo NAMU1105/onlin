@@ -93,6 +93,8 @@ const Sns = ({ content, themeId, extraData }) => {
   };
 
   const shareKakao = () => {
+    console.log('kakao clicked');
+
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     // web으로 보는 경우 링크 복사를 해준다.
     if (!isMobile) {
@@ -166,10 +168,7 @@ const Sns = ({ content, themeId, extraData }) => {
               className='sns__list__item sns__list__item--kakao'
               onClick={shareKakao}
             >
-              <KakaoIcon
-                className='absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2'
-                onClick={shareKakao}
-              />
+              <KakaoIcon className='absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2' />
             </li>
           )}
           {content.snsList.includes('sms') && (
@@ -177,10 +176,7 @@ const Sns = ({ content, themeId, extraData }) => {
               className='sns__list__item sns__list__item--link'
               onClick={useShareApi}
             >
-              <LinkIcon
-                className='absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2'
-                onClick={useShareApi}
-              />
+              <LinkIcon className='absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2' />
             </li>
           )}
         </ul>
