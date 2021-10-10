@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .react-calendar {
   height: 100%;
   max-width: 100%;
@@ -92,11 +93,31 @@
   color: #937f89;
 }
 
+/*날짜들 간격 맞추기*/
+.theme-template1 .react-calendar__month-view__weekdays__weekday:nth-child(2),
+.theme-template2 .react-calendar__month-view__weekdays__weekday:nth-child(2),
+.theme-template3 .react-calendar__month-view__weekdays__weekday:nth-child(2) {
+  margin-left: -0.2rem !important;
+}
+
+.theme-template1 .react-calendar__month-view__weekdays__weekday:nth-child(3),
+.theme-template2 .react-calendar__month-view__weekdays__weekday:nth-child(3),
+.theme-template3 .react-calendar__month-view__weekdays__weekday:nth-child(3) {
+  margin-left: 0.2rem !important;
+}
+
+.theme-template1 .react-calendar__month-view__weekdays__weekday:nth-child(5),
+.theme-template2 .react-calendar__month-view__weekdays__weekday:nth-child(5),
+.theme-template3 .react-calendar__month-view__weekdays__weekday:nth-child(5) {
+  margin-left: -0.5rem !important;
+}
+
 .theme-template1 .react-calendar__month-view__weekdays__weekday:nth-child(7),
 .theme-template2 .react-calendar__month-view__weekdays__weekday:nth-child(7),
 .theme-template3 .react-calendar__month-view__weekdays__weekday:nth-child(7) {
   display: block;
   color: transparent;
+  margin-left: 0.5rem !important;
 }
 
 .theme-template1
