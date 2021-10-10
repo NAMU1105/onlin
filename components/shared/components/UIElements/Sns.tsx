@@ -30,43 +30,44 @@ const Sns = ({ content, themeId }) => {
     //   requestUrl: currentLocation,
     // });
 
-    window.Kakao.Link.sendCustom({
-      templateId: 46680,
-      templateArgs: {
-        title:
-          '판교 맛집에 들르다. 다양하고 풍부한 퓨전 한정식. 깔끔한 내부 인테리어 라이언',
-        description:
-          '부담없는 가격에 푸짐하게 즐기는 점심메뉴 런치한정식, 불고기정식, 돼지 김치찌개 등',
-      },
-    });
-
-    // window.Kakao.Link.sendDefault({
-    //   objectType: 'feed',
-    //   content: {
-    //     title: '',
-    //     description: '',
-    //     imageUrl: '',
-    //     link: {
-    //       mobileWebUrl: currentLocation,
-    //       webUrl: currentLocation,
-    //     },
+    // window.Kakao.Link.sendCustom({
+    //   templateId: 46680,
+    //   templateArgs: {
+    //     title:
+    //       '판교 맛집에 들르다. 다양하고 풍부한 퓨전 한정식. 깔끔한 내부 인테리어 라이언',
+    //     description:
+    //       '부담없는 가격에 푸짐하게 즐기는 점심메뉴 런치한정식, 불고기정식, 돼지 김치찌개 등',
     //   },
-    //   social: {
-    //     likeCount: 10,
-    //     commentCount: 20,
-    //     sharedCount: 30,
-    //   },
-    //   buttons: [
-    //     {
-    //       title: '게시글확인',
-    //       link: {
-    //         mobileWebUrl: currentLocation,
-    //         webUrl: currentLocation,
-    //       },
-    //     },
-    //   ],
-    //   serverCallbackArgs: `{"current": "${currentLocation}"}`,
     // });
+
+    window.Kakao.Link.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: '청첩장',
+        description: '올린의 청첩장입니다.',
+        imageUrl:
+          'https://www.notion.so/nobonobopurin/20210926-64126cdff0e9430e903e15491c1761dc#d77d29e1ad694cb78dcf622efe5d281d',
+        link: {
+          mobileWebUrl: currentLocation,
+          webUrl: currentLocation,
+        },
+      },
+      // social: {
+      //   likeCount: 10,
+      //   commentCount: 20,
+      //   sharedCount: 30,
+      // },
+      buttons: [
+        {
+          title: '청첩장',
+          link: {
+            mobileWebUrl: currentLocation,
+            webUrl: currentLocation,
+          },
+        },
+      ],
+      serverCallbackArgs: `{"current": "${currentLocation}"}`,
+    });
   }
 
   const share = (p: 'facebook' | 'kakao' | 'sms') => {
