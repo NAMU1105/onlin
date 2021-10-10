@@ -11,6 +11,8 @@ import LinkIcon from '../../../../public/icons/link-2.svg';
 declare global {
   interface Window {
     Kakao: any;
+    fbAsyncInit: any;
+    FB: any;
   }
 }
 const Sns = ({ content, themeId, extraData }) => {
@@ -20,8 +22,58 @@ const Sns = ({ content, themeId, extraData }) => {
   useEffect(() => {
     if (!window) return;
     setCurrentLocation(window.location.href);
+
+    (function (d, s, id) {
+      var js,
+        fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {
+        return;
+      }
+      js = d.createElement(s);
+      js.id = id;
+      js.src = 'https://connect.facebook.net/en_US/sdk.js';
+      fjs.parentNode.insertBefore(js, fjs);
+    })(document, 'script', 'facebook-jssdk');
+
+    window.fbAsyncInit = function () {
+      window.FB.init({
+        appId: '450935912707362',
+        autoLogAppEvents: true,
+        xfbml: true,
+        version: 'v7.0', //ex> v7.0
+      });
+    };
   }, []);
 
+  function shareFacebook() {
+    if (!window) return;
+
+    window.FB.ui(
+      {
+        method: 'share',
+        href: currentLocation,
+      },
+      function (data) {
+        // Log.info('App Requests Response', data);
+      }
+    );
+    // }
+    // window.FB.ui(
+    //   {
+    //     method: 'share',
+    //     href: currentLocation,
+    //   },
+    //   function (response) {
+    //     if (response && !response.error_code) {
+    //       alert('공유 완료');
+    //     } else {
+    //       alert('공유 실패');
+    //     }
+    //   }
+    // );
+  }
+
+  // 복사하기 기능
   const copy = () => {
     const tempElem = document.createElement('textarea');
     tempElem.value = currentLocation;
@@ -126,7 +178,8 @@ const Sns = ({ content, themeId, extraData }) => {
         <h1 className='sr-only'>공유하기</h1>
         <ul className='sns__list'>
           {content.snsList.includes('facebook') && (
-            <li className='sns__list__item' onClick={() => share('facebook')}>
+            <li className='sns__list__item' onClick={shareFacebook}>
+              {/* <li className='sns__list__item' onClick={() => share('facebook')}> */}
               <FacebookIcon />
             </li>
           )}
@@ -140,7 +193,10 @@ const Sns = ({ content, themeId, extraData }) => {
               className='sns__list__item sns__list__item--kakao'
               onClick={shareKakao}
             >
-              <KakaoIcon className='absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2' />
+              <KakaoIcon
+                className='absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2'
+                onClick={shareKakao}
+              />
             </li>
           )}
           {content.snsList.includes('sms') && (
@@ -148,7 +204,10 @@ const Sns = ({ content, themeId, extraData }) => {
               className='sns__list__item sns__list__item--link'
               onClick={useShareApi}
             >
-              <LinkIcon className='absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2' />
+              <LinkIcon
+                className='absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2'
+                onClick={useShareApi}
+              />
             </li>
           )}
         </ul>
