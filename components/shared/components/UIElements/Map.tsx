@@ -32,7 +32,8 @@ const Map = ({ content, themeId }) => {
 
   const openKakaoLink = () => {
     window.open(
-      `https://map.kakao.com/link/map/${content.place.address.latitude},${content.place.address.longitude}`
+      // `https://map.kakao.com/link/map/${content.place.address.latitude},${content.place.address.longitude}`
+      `kakaomap://look?p=${content.place.address.latitude},${content.place.address.longitude}`
     );
   };
 

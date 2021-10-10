@@ -1,20 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&display=swap');
-@import './sass/main.scss';
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-* {
-  font-family: 'Noto Serif KR', serif;
-  font-size: 14px;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-abbr[title] {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import './base.css';
+@import 'tailwindcss/utilities';

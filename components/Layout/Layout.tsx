@@ -32,7 +32,7 @@ const Layout = ({ children }) => {
         {/* <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUg5GaeCRZVs7KrcOTRnPplvfojXeBUa0"></script> */}
       </Head>
 
-      <div className='content w-full flex flex-col items-center justify-center'>
+      <div className='content w-full flex flex-col items-center justify-center font-noto'>
         {/* <Header /> */}
         {children}
         {/* <Footer /> */}

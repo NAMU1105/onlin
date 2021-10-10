@@ -78,7 +78,7 @@ const Main = ({ content, themeId }) => {
             />
             <div className='main__text-wrapper--3'>
               {mainDeco}
-              <div className='main__title__names--template1'>
+              <div className=''>
                 <span className='text-big mr-2' id='groom'>
                   {content.groom}
                 </span>

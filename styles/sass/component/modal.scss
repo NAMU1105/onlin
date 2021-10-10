@@ -1,20 +1,18 @@
-@layer components {
-  .modal {
-    @apply flex justify-center items-center absolute inset-1/2 w-1/2 h-40 transform -translate-x-1/2 -translate-y-1/2  rounded-md p-4;
-    background-color: white;
-  }
-  .modal--template1 {
-    border: 10px solid #af8198;
-  }
-  .modal--template2 {
-    border: 10px solid #af8f81;
-  }
-  .modal--template3 {
-    border: 10px solid #32482b;
-  }
+.modal {
+  @apply flex justify-center items-center absolute inset-1/2 w-1/2 h-40 transform -translate-x-1/2 -translate-y-1/2  rounded-md p-4;
+  background-color: white;
+}
+.modal--template1 {
+  border: 10px solid #af8198;
+}
+.modal--template2 {
+  border: 10px solid #af8f81;
+}
+.modal--template3 {
+  border: 10px solid #32482b;
+}
 
-  .backdrop {
-    @apply w-screen h-screen fixed z-50 top-0 left-0;
-    background-color: #0a0a0ae3;
-  }
+.backdrop {
+  @apply w-screen h-screen fixed z-50 top-0 left-0;
+  background-color: #0a0a0ae3;
 }
