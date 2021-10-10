@@ -13,8 +13,11 @@ const CalendarComp = ({ content, themeId }) => {
 
   useEffect(() => {
     setkorDate({
-      year: value.toLocaleDateString().split('. ')[0],
-      month: value.toLocaleDateString().split('. ')[1],
+      year: content.date.split('-')[0],
+      month:
+        content.date.split('-')[1].split('0')[0] === '0'
+          ? content.date.split('-')[1].split('0')[1]
+          : content.date.split('-')[1],
     });
   }, [value]);
 

@@ -133,7 +133,7 @@ const Sns = ({ content, themeId, extraData }) => {
     if (navigator.share) {
       navigator
         .share({
-          title: 'WebShare API Demo',
+          title: extraData.title,
           url: currentLocation,
         })
         .then(() => {
