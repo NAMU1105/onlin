@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 // import Image from 'next/image';
 
 import * as Icon from 'react-feather';
@@ -9,13 +9,37 @@ import KakaoIcon from '../../../../public/icons/kakao.svg';
 import LinkIcon from '../../../../public/icons/link-2.svg';
 
 //  TODO: 공유하기 기능
+
 const Sns = ({ content, themeId }) => {
+  // const []
+  //   useEffect(() => {
+  //   const currentLocation = window.location.href;
+
+  //   }, []);
+
+  const share = (p: 'facebook' | 'kakao' | 'sms') => {
+    if (!window) return;
+    if (navigator.share) {
+      navigator
+        .share({
+          title: 'WebShare API Demo',
+          url: window?.location.href,
+        })
+        .then(() => {
+          console.log('Thanks for sharing!');
+        })
+        .catch(console.error);
+    } else {
+      // shareDialog.classList.add('is-open');
+    }
+  };
+
   return (
     <section className='sns '>
       <h1 className='sr-only'>공유하기</h1>
       <ul className='sns__list'>
         {content.snsList.includes('facebook') && (
-          <li className='sns__list__item'>
+          <li className='sns__list__item' onClick={() => share('facebook')}>
             <FacebookIcon />
           </li>
         )}

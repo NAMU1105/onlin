@@ -31,9 +31,12 @@ const Map = ({ content, themeId }) => {
   }, []);
 
   const openKakaoLink = () => {
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
     window.open(
-      // `https://map.kakao.com/link/map/${content.place.address.latitude},${content.place.address.longitude}`
-      `kakaomap://look?p=${content.place.address.latitude},${content.place.address.longitude}`
+      !isMobile
+        ? `https://map.kakao.com/link/map/${content.place.address.latitude},${content.place.address.longitude}`
+        : `kakaomap://look?p=${content.place.address.latitude},${content.place.address.longitude}`
     );
   };
 
