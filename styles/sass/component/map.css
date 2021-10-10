@@ -38,7 +38,7 @@
 }
 
 .kakao-map__connect__arrow {
-  @apply ml-auto;
+  /*  @apply ml-auto;  */
   font-size: 1px;
   color: #53434b;
 }
