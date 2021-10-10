@@ -54,26 +54,16 @@ const Sns = ({ content, themeId, extraData }) => {
         href: currentLocation,
       },
       function (data) {
-        // Log.info('App Requests Response', data);
+        if (data && !data.error_code) {
+          console.log('공유 완료');
+        } else {
+          console.log('공유 실패');
+        }
       }
     );
-    // }
-    // window.FB.ui(
-    //   {
-    //     method: 'share',
-    //     href: currentLocation,
-    //   },
-    //   function (response) {
-    //     if (response && !response.error_code) {
-    //       alert('공유 완료');
-    //     } else {
-    //       alert('공유 실패');
-    //     }
-    //   }
-    // );
   }
 
-  // 복사하기 기능
+  // text 복사하기 기능
   const copy = () => {
     const tempElem = document.createElement('textarea');
     tempElem.value = currentLocation;
@@ -141,33 +131,6 @@ const Sns = ({ content, themeId, extraData }) => {
     } else {
       // shareDialog.classList.add('is-open');
     }
-  };
-
-  const share = (p: 'facebook' | 'kakao' | 'sms') => {
-    if (p === 'facebook') {
-      // 개발환경에서는 확인 안 됨
-      window.open(`http://www.facebook.com/sharer.php?u=${currentLocation}`);
-      return;
-    }
-
-    // if (p === 'kakao') {
-    //   shareKakao();
-    //   return;
-    // }
-
-    // if (p === 'sms' && navigator.share) {
-    //   navigator
-    //     .share({
-    //       title: 'WebShare API Demo',
-    //       url: currentLocation,
-    //     })
-    //     .then(() => {
-    //       // console.log('Thanks for sharing!');
-    //     })
-    //     .catch(console.error);
-    // } else {
-    //   // shareDialog.classList.add('is-open');
-    // }
   };
 
   return (

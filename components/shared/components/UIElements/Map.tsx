@@ -10,6 +10,7 @@ const Map = ({ content, themeId }) => {
   // const Map = ({ center, level = 2 }) => {
   const mapRef = useRef();
   //   const { lat, lng } = center;
+  // window.kakao.init(process.env.REACT_APP_KAKAOMAP_API_KEY);
 
   useEffect(() => {
     const container = mapRef.current;
