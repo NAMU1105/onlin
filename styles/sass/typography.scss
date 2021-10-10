@@ -1,6 +1,7 @@
 .section-title--template1 {
+  text-align: center;
   margin-bottom: 0.5rem;
-  color: $theme-text-1;
+  color: #af8198;
   @apply capitalize;
 }
 .section-title--template2 {
@@ -25,7 +26,32 @@
   color: #af8198;
   @apply text-center;
 }
+.text-title-primary--template2 {
+  color: #af8f81;
+  @apply text-center;
+}
+.text-title-primary--template3 {
+  color: #32482b;
+  @apply text-center;
+}
+.color-primary--template1 {
+  color: #af8198;
+}
+.color-primary--template2 {
+  color: #af8f81;
+}
+.color-primary--template3 {
+  color: #32482b;
+}
 
 .text-primary--template1 {
   color: #937f89;
+}
+.text-primary-bold--template1,
+.text-primary-bold--template2 {
+  color: #53434b;
+}
+
+.text-primary-bold--template1 {
+  color: #252c26;
 }

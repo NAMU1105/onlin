@@ -1,5 +1,5 @@
 import React from 'react';
-import * as Icon from 'react-feather';
+import { Phone } from 'react-feather';
 
 const addHiphen = (num) => {
   const numArray = num.split('');
@@ -12,7 +12,7 @@ const addHiphen = (num) => {
 };
 
 const Contact = ({ content, themeId }) => {
-  // console.log('contact: ', content);
+  console.log('contact: ', content);
 
   return (
     <section
@@ -23,13 +23,26 @@ const Contact = ({ content, themeId }) => {
         <div className='flex items-center'>
           {/* <img className="w-6 mr-8" src="/groom.png" alt="groom" /> */}
           <span className={`text-primary--${themeId}`}>신랑</span>
+          {/* <span className={`text-primary-bold--${themeId}`}>신랑이름</span> */}
+          {/* 신랑, 신부 이름 서버에서 안 받음 */}
         </div>
-        <div className='flex items-center'>
-          <a className='mr-5' href={`tel://${addHiphen(content.groomContact)}`}>
-            <Icon.Phone />
+        <div className={`flex items-center  color-primary--${themeId}`}>
+          <a
+            className={`mr-5`}
+            href={`tel://${addHiphen(content.groomContact)}`}
+          >
+            <Phone className='fill-current' />
           </a>
           <a href={`sms://${addHiphen(content.groomContact)}`}>
-            <Icon.Mail />
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              className='h-7 w-7'
+              viewBox='0 0 20 20'
+              fill='currentColor'
+            >
+              <path d='M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z' />
+              <path d='M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z' />
+            </svg>
           </a>
         </div>
       </div>
@@ -41,90 +54,153 @@ const Contact = ({ content, themeId }) => {
       >
         <div className='flex items-center'>
           {/* <img className="w-6 mr-8" src="/bride.png" alt="groom" /> */}
-          <span className='text-primary--theme1'>신부</span>
+          <span className={`text-primary--${themeId}`}>신부</span>
         </div>
-        <div className='flex items-center'>
-          <a className='mr-5' href={`tel://${addHiphen(content.brideContact)}`}>
-            <Icon.Phone />
+        <div className={`flex items-center color-primary--${themeId}`}>
+          <a
+            className={`mr-5 `}
+            href={`tel://${addHiphen(content.brideContact)}`}
+          >
+            <Phone className='fill-current' />
           </a>
           <a href={`sms://${addHiphen(content.brideContact)}`}>
-            <Icon.Mail />
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              className='h-7 w-7'
+              viewBox='0 0 20 20'
+              fill='currentColor'
+            >
+              <path d='M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z' />
+              <path d='M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z' />
+            </svg>
           </a>
         </div>
       </div>
       {/* 혼주 정보 */}
-      <table className='mt-4 w-full'>
-        <thead className='leading-loose	'>
-          <tr className='text-primary--theme1'>
-            <th>신랑 측 혼주</th>
-            <th>신부 측 혼주</th>
+      <table className='mt-6 w-full'>
+        <thead className='leading-loose'>
+          <tr className={`text-primary--${themeId}`}>
+            <th className='text-left pl-4 font-normal'>신랑 측 혼주</th>
+            <th className='text-right pr-4 font-normal'>신부 측 혼주</th>
           </tr>
         </thead>
-        <tbody className=''>
+        <tbody className={`text-primary--${themeId}`}>
           <tr>
             <td>
-              <div className='flex justify-between'>
-                <span className='text-primary--theme1'>아버지</span>
-                <span className='font-base font-medium mr-2'>
+              <div className='flex'>
+                <span className={`text-primary--${themeId} mr-5`}>아버지</span>
+                <span className={`mr-2 text-primary-bold--${themeId}`}>
                   {content.groomFatherName}
                 </span>
               </div>
-              <div className='flex items-center justify-center'>
+              <div
+                className={`flex items-center pl-4 mt-4 color-primary--${themeId}`}
+              >
                 <a
                   className='mr-4'
                   href={`tel://${addHiphen(content.groomFatherContact)}`}
                 >
-                  <Icon.Phone />
+                  <Phone className='fill-current' />
                 </a>
                 <a href={`sms://${addHiphen(content.groomFatherContact)}`}>
-                  <Icon.Mail />
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    className='h-7 w-7'
+                    viewBox='0 0 20 20'
+                    fill='currentColor'
+                  >
+                    <path d='M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z' />
+                    <path d='M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z' />
+                  </svg>
                 </a>
               </div>
             </td>
             <td>
-              <span className='text-primary--theme1'>아버지</span>
-              <span className='font-bold mr-2'>{content.brideFatherName}</span>
-              <div className='flex items-center justify-center'>
+              <div className='flex justify-end'>
+                <span className={`text-primary--${themeId} mr-5`}>아버지</span>
+                <span className={`mr-2 text-primary-bold--${themeId}`}>
+                  {content.brideFatherName}
+                </span>
+              </div>
+              <div
+                className={`flex items-center justify-end mr-5 mt-4  color-primary--${themeId}`}
+              >
                 <a
                   className='mr-4'
                   href={`tel://${addHiphen(content.brideFatherContact)}`}
                 >
-                  <Icon.Phone />
+                  <Phone className='fill-current' />
                 </a>
                 <a href={`sms://${addHiphen(content.brideFatherContact)}`}>
-                  <Icon.Mail />
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    className='h-7 w-7'
+                    viewBox='0 0 20 20'
+                    fill='currentColor'
+                  >
+                    <path d='M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z' />
+                    <path d='M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z' />
+                  </svg>
                 </a>
               </div>
             </td>
           </tr>
           <tr>
             <td>
-              <span className='text-primary--theme1'>어머니</span>
-              <span className='font-bold mr-2'>{content.groomMotherName}</span>
-              <div className='flex items-center justify-center'>
+              <div className='flex mt-4'>
+                <span className={`text-primary--${themeId} mr-5`}>어머니</span>
+                <span className={`mr-2 text-primary-bold--${themeId}`}>
+                  {content.groomMotherName}
+                </span>
+              </div>
+              <div
+                className={`flex items-center ml-5 mt-4  color-primary--${themeId}`}
+              >
                 <a
                   className='mr-4'
                   href={`tel://${addHiphen(content.groomMotherContact)}`}
                 >
-                  <Icon.Phone />
+                  <Phone className='fill-current' />
                 </a>
                 <a href={`sms://${addHiphen(content.groomMotherContact)}`}>
-                  <Icon.Mail />
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    className='h-7 w-7'
+                    viewBox='0 0 20 20'
+                    fill='currentColor'
+                  >
+                    <path d='M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z' />
+                    <path d='M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z' />
+                  </svg>
                 </a>
               </div>
             </td>
             <td>
-              <span className='text-primary--theme1'>어머니</span>
-              <span className='font-bold mr-2'>{content.brideMotherName}</span>
-              <div className='flex items-center justify-center'>
+              <div className='flex justify-end mt-4'>
+                <span className={`text-primary--${themeId} mr-5`}>어머니</span>
+                <span className={`mr-2 text-primary-bold--${themeId}`}>
+                  {content.brideMotherName}
+                </span>
+              </div>
+              <div
+                className={`flex items-center justify-end  mr-5 mt-4  color-primary--${themeId}`}
+              >
                 <a
                   className='mr-4'
                   href={`tel://${addHiphen(content.brideMotherContact)}`}
                 >
-                  <Icon.Phone />
+                  <Phone className='fill-current' />
                 </a>
                 <a href={`sms://${addHiphen(content.brideMotherContact)}`}>
-                  <Icon.Mail />
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    className='h-7 w-7'
+                    viewBox='0 0 20 20'
+                    fill='currentColor'
+                  >
+                    <path d='M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z' />
+                    <path d='M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z' />
+                  </svg>
                 </a>
               </div>
             </td>
