@@ -28,7 +28,9 @@
 }
 
 .toast {
-  @apply z-50 flex justify-center items-center fixed transform rounded-full p-2 w-1/2 h-12 left-1/2;
+  @apply z-50 flex justify-center items-center fixed transform rounded-full p-2 w-1/2 left-1/2;
+  min-height: 3rem;
+  padding: 1rem;
   bottom: 0;
   transform: translate(-50%, 100%);
 
