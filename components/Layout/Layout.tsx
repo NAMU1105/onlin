@@ -8,10 +8,10 @@ const Layout = ({ children }) => {
         <title>Olin</title>
         <link rel='icon' href='/favicon.ico' />
         {/* kakao map */}
-        {/* <script
-          type='text/javascript's
+        <script
+          type='text/javascript'
           src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.REACT_APP_KAKAOMAP_API_KEY}`}
-        ></script> */}
+        ></script>
         {/* src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.REACT_APP_KAKAOMAP_API_KEY}`} */}
         <script
           defer

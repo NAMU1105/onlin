@@ -38,7 +38,7 @@ const Sns = ({ content, themeId, extraData }) => {
 
     window.fbAsyncInit = function () {
       window.FB.init({
-        appId: '450935912707362',
+        appId: process.env.REACT_APP_FACEBOOK_APP_ID,
         autoLogAppEvents: true,
         xfbml: true,
         version: 'v7.0', //ex> v7.0
@@ -67,7 +67,7 @@ const Sns = ({ content, themeId, extraData }) => {
 
         setTimeout(() => {
           setIsToastOpen(false);
-        }, 1000);
+        }, 1200);
       }
     );
   }

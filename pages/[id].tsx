@@ -47,11 +47,6 @@ const Detail = (props) => {
     <>
       <Head>
         <title>{userData.template.templateContent[0].content.title}</title>
-        <script
-          defer
-          type='text/javascript'
-          src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.REACT_APP_KAKAOMAP_API_KEY}`}
-        ></script>
         <meta
           name='description'
           content={userData.template.templateContent[0].content.title}

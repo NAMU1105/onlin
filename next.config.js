@@ -12,6 +12,8 @@ module.exports = {
   //   },
   env: {
     customKey: 'my-value',
+    REACT_APP_KAKAOMAP_API_KEY: process.env.REACT_APP_KAKAOMAP_API_KEY,
+    REACT_APP_FACEBOOK_APP_ID: process.env.REACT_APP_FACEBOOK_APP_ID,
   },
 
   sassOptions: {
