@@ -1,4 +1,5 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
 interface ModalProps {
   content: any;
@@ -6,7 +7,10 @@ interface ModalProps {
 }
 
 const Modal: React.FC<ModalProps> = (props: ModalProps) => {
-  return <div className={`modal modal--${props.design}`}>{props.content}</div>;
+  return ReactDOM.createPortal(
+    <div className={`modal modal--${props.design}`}>{props.content}</div>,
+    document!.getElementById('modal-hook')
+  );
 };
 
 export default Modal;

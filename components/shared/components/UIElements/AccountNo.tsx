@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import Backdrop from './Backdrop';
 import Modal from './Modal';
+import Toast from './ToastMessage';
 
 const AccountNo = ({ content, themeId }) => {
+  console.log({ content });
+
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [isToastOpen, setIsToastOpen] = useState<boolean>(false);
   const [modalContent, setModalContent] = useState<string>('');
 
   const setModalContentAndShowModal = (p: 'groom' | 'bride') => {
@@ -11,13 +15,48 @@ const AccountNo = ({ content, themeId }) => {
 
     setModalContent(p === 'groom' ? `${content.groom}` : `${content.bride}`);
   };
+
+  const copy = () => {
+    const tempElem = document.createElement('textarea');
+    tempElem.value = modalContent;
+    document.body.appendChild(tempElem);
+
+    tempElem.select();
+    document.execCommand('copy');
+    document.body.removeChild(tempElem);
+
+    // show toast
+    setIsToastOpen(true);
+
+    setTimeout(() => {
+      setIsToastOpen(false);
+      // close modal
+      setIsModalOpen(false);
+    }, 1000);
+  };
   return (
     <>
+      {isToastOpen && <Toast isOpen={isToastOpen} content='복사완료!' />}
       {isModalOpen && (
         <>
-          <Backdrop isShow={isModalOpen} onClick={() => setIsModalOpen(false)}>
-            <Modal content={modalContent} design={themeId} />
-          </Backdrop>
+          <Backdrop
+            isShow={isModalOpen}
+            onClick={() => setIsModalOpen(false)}
+          />
+          <Modal
+            design={themeId}
+            content={
+              <div className='flex flex-col'>
+                <span className='mb-4'>{modalContent}</span>
+                <button
+                  className={`accountNo__button--${themeId} w-full`}
+                  onClick={copy}
+                >
+                  복사하기
+                </button>
+              </div>
+            }
+          />
         </>
       )}
 

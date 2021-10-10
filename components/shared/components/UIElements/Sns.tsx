@@ -94,7 +94,7 @@ const Sns = ({ content, themeId, extraData }) => {
             className='sns__list__item sns__list__item--kakao'
             onClick={() => share('kakao')}
           >
-            <KakaoIcon className='absolute w-full top-1/3' />
+            <KakaoIcon className='absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2' />
           </li>
         )}
         {content.snsList.includes('sms') && (
@@ -102,7 +102,7 @@ const Sns = ({ content, themeId, extraData }) => {
             className='sns__list__item sns__list__item--link'
             onClick={() => share('sms')}
           >
-            <LinkIcon className='absolute w-full top-3' />
+            <LinkIcon className='absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2' />
           </li>
         )}
       </ul>

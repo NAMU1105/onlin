@@ -2,14 +2,15 @@ import React, { ReactNode, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 
 interface BackdropProps {
-  children: ReactNode;
+  children?: ReactNode;
   isShow: boolean;
   onClick?: () => void;
 }
 
 const Backdrop: React.FC<BackdropProps> = (props: BackdropProps) => {
   useEffect(() => {
-    if (!props.isShow) return;
+    if (!props.isShow || !document) return;
+    // document.body.style.overflow = 'hidden';
     return () => {
       // 스크롤 방지 해제
       document.body.style.overflow = 'unset';
@@ -23,7 +24,7 @@ const Backdrop: React.FC<BackdropProps> = (props: BackdropProps) => {
     >
       {props.children}
     </div>,
-    document.getElementById('backdrop-hook')
+    document!.getElementById('backdrop-hook')
   );
 };
 
