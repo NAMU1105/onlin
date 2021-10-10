@@ -12,8 +12,6 @@ const addHiphen = (num) => {
 };
 
 const Contact = ({ content, themeId }) => {
-  console.log('contact: ', content);
-
   return (
     <section
       id='contact'

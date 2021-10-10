@@ -11,8 +11,6 @@ const Componentmiddleware: React.FC<ComponetMiddleWareProps> = ({
   ...rest
   // layout: Layout,
 }) => {
-  console.log({ ...rest });
-
   return (
     // <Layout>
     <Component {...rest} />
