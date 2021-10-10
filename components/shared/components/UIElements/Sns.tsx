@@ -11,19 +11,18 @@ import LinkIcon from '../../../../public/icons/link-2.svg';
 //  TODO: 공유하기 기능
 
 const Sns = ({ content, themeId }) => {
-  // const []
-  //   useEffect(() => {
-  //   const currentLocation = window.location.href;
-
-  //   }, []);
+  const [currentLocation, setCurrentLocation] = useState<string>('');
+  useEffect(() => {
+    if (!window) return;
+    setCurrentLocation(window.location.href);
+  }, []);
 
   const share = (p: 'facebook' | 'kakao' | 'sms') => {
-    if (!window) return;
     if (navigator.share) {
       navigator
         .share({
           title: 'WebShare API Demo',
-          url: window?.location.href,
+          url: currentLocation,
         })
         .then(() => {
           console.log('Thanks for sharing!');
