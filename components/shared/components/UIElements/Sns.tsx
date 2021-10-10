@@ -18,6 +18,7 @@ declare global {
 const Sns = ({ content, themeId, extraData }) => {
   const [currentLocation, setCurrentLocation] = useState<string>('');
   const [isToastOpen, setIsToastOpen] = useState<boolean>(false);
+  const [toastContent, setToastContent] = useState<string>('복사 완료!');
 
   useEffect(() => {
     if (!window) return;
@@ -54,17 +55,26 @@ const Sns = ({ content, themeId, extraData }) => {
         href: currentLocation,
       },
       function (data) {
+        setIsToastOpen(true);
+
         if (data && !data.error_code) {
-          console.log('공유 완료');
+          // console.log('공유 완료');
+          setToastContent('공유 완료!');
         } else {
-          console.log('공유 실패');
+          // console.log('공유 실패');
+          setToastContent('공유 실패, 다시 시도해주세요.');
         }
+
+        setTimeout(() => {
+          setIsToastOpen(false);
+        }, 1000);
       }
     );
   }
 
   // text 복사하기 기능
   const copy = () => {
+    setToastContent('복사 완료!');
     const tempElem = document.createElement('textarea');
     tempElem.value = currentLocation;
 
@@ -135,7 +145,7 @@ const Sns = ({ content, themeId, extraData }) => {
 
   return (
     <>
-      {isToastOpen && <Toast isOpen={isToastOpen} content='복사완료!' />}
+      {isToastOpen && <Toast isOpen={isToastOpen} content={toastContent} />}
 
       <section className='sns '>
         <h1 className='sr-only'>공유하기</h1>
