@@ -26,6 +26,7 @@
 /* template 2 */
 .main--template2 {
   height: 100vh;
+  max-height: -webkit-fill-available;
   width: 100vw;
 }
 
@@ -51,8 +52,8 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
 }
 
 .main__image--template2 {
@@ -66,8 +67,8 @@
 .main__place {
   color: #53434b;
   -webkit-writing-mode: vertical-rl;
-      -ms-writing-mode: tb-rl;
-          writing-mode: vertical-rl;
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
   text-orientation: mixed;
   position: absolute;
   bottom: 20px;
