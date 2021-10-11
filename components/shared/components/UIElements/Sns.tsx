@@ -18,6 +18,7 @@ declare global {
 const Sns = ({ content, themeId, extraData }) => {
   const [currentLocation, setCurrentLocation] = useState<string>('');
   const [isToastOpen, setIsToastOpen] = useState<boolean>(false);
+  const [isKakaoInitDone, setIsKakaoInitDone] = useState<boolean>(false);
   const [toastContent, setToastContent] = useState<string>('복사 완료!');
 
   useEffect(() => {
@@ -102,7 +103,10 @@ const Sns = ({ content, themeId, extraData }) => {
       return;
     }
 
-    window.Kakao.init(process.env.REACT_APP_KAKAOMAP_API_KEY);
+    if (!isKakaoInitDone) {
+      window.Kakao.init(process.env.REACT_APP_KAKAOMAP_API_KEY);
+      setIsKakaoInitDone(true);
+    }
 
     window.Kakao.Link.sendDefault({
       objectType: 'feed',
