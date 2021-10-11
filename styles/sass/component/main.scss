@@ -6,7 +6,8 @@
 }
 
 .main__image--template1 {
-  @apply h-screen;
+  height: 100vh;
+  max-height: -webkit-fill-available;
 }
 
 .main__title__names--template1 {
@@ -27,6 +28,7 @@
 /* template 2 */
 .main--template2 {
   height: 100vh;
+  max-height: -webkit-fill-available;
   width: 100vw;
 }
 
