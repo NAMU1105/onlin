@@ -20,16 +20,21 @@ import SNS from '../components/shared/components/UIElements/Sns';
 import Footer from '../components/shared/components/UIElements/Footer';
 
 const VARIANT_MAPS: Record<string, React.FC<any>> = {
-  Main,
-  Greeting,
-  Contact,
-  Calendar,
-  Map: Address,
-  Gallery,
-  Video,
-  accountNo: AccountInfo,
+  main: Main,
+  greeting: Greeting,
+  contact: Contact,
+  calendar: Calendar,
+  map: Address,
+  gallery: Gallery,
+  video: Video,
+  accountno: AccountInfo,
   sns: SNS,
 };
+
+// const returnComp = (p: string) => {
+//   const param = p.toLowerCase();
+//   let elem;
+// };
 
 const Detail = (props) => {
   const router = useRouter();
@@ -70,11 +75,13 @@ const Detail = (props) => {
         />
       </Head>
       {data.map((t, index) => {
+        console.log(t.sectionName.toLowerCase());
+        const name = t.sectionName.toLowerCase();
         return (
           <ComponentMiddleWare
             key={index}
             themeId={templateId}
-            component={VARIANT_MAPS[t.sectionName]}
+            component={VARIANT_MAPS[name]}
             content={t.content}
             extraData={userData.template.templateContent[0].content}
           />
@@ -87,7 +94,11 @@ const Detail = (props) => {
 };
 
 async function getData(id: string) {
+  console.log({ id });
+
   const data = await requestTempleteData(id);
+  console.log({ data });
+
   return data;
 }
 
@@ -96,6 +107,7 @@ export const getStaticProps = async (context) => {
   const userId = params.id;
 
   const user = await getData(userId);
+  console.log({ user });
 
   //   invalid한 url일 경우 404페이지 띄움
   if (!user) {

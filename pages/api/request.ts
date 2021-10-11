@@ -1,11 +1,9 @@
-import axios, { AxiosResponse } from "axios";
+import axios, { AxiosResponse } from 'axios';
 
 export const requestTempleteData = async (templeteId: string) => {
   const url = `http://3.138.247.170/api/wedding/detail-public/${templeteId}`;
   try {
     const { data } = await axios.get(url);
-
-    // console.log(data.data);
 
     // return data.data as typeof mockTempleteData;
     // const { data } = await getMockData;
@@ -17,5 +15,3 @@ export const requestTempleteData = async (templeteId: string) => {
     console.log(e);
   }
 };
-
-
