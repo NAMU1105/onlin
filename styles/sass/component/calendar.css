@@ -194,9 +194,6 @@ abbr::first-letter {
   background: #af8198;
   color: white;
   border-radius: 100%;
-  /**
-  clip-path: circle(40% at 50% 50%);
-  **/
 }
 
 .theme-template2 .react-calendar__tile--active {
@@ -209,5 +206,14 @@ abbr::first-letter {
   background: #32482b;
   color: white;
   border-radius: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .theme-template1 .react-calendar__tile--active,
+  .theme-template2 .react-calendar__tile--active,
+  .theme-template3 .react-calendar__tile--active {
+    -webkit-clip-path: circle(40% at 50% 50%);
+            clip-path: circle(40% at 50% 50%);
+  }
 }
 /*# sourceMappingURL=calendar.css.map */
