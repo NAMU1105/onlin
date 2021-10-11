@@ -46,9 +46,18 @@ const Map = ({ content, themeId }) => {
         className={`kakao-map__connect kakao-map__connect--${themeId} cursor-pointer`}
         onClick={openKakaoLink}
       >
-        <span className=''>카카오맵으로 보기</span>
-        {/* <span className='ml-auto'>카카오맵으로 보기</span> */}
-        <span className='kakao-map__connect__arrow'>&#9654;</span>
+        <span className='ml-auto'>카카오맵으로 보기</span>
+        <span className='kakao-map__connect__arrow'>
+          <svg
+            width='7'
+            height='6'
+            viewBox='0 0 5 6'
+            fill='none'
+            xmlns='http://www.w3.org/2000/svg'
+          >
+            <path d='M0 6L5 3L0 0V6Z' fill='#53434B' />
+          </svg>
+        </span>
       </div>
     </>
   );
