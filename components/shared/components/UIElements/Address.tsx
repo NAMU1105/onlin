@@ -4,7 +4,7 @@ import Map from '../UIElements/Map';
 const address = 'DEAR HOTEL 그랜드홀 서울 강남구 압구정로 120';
 
 const Address = ({ content, themeId }) => {
-  // console.log({ content });
+  console.log({ content });
 
   return (
     <section id='address' className='address'>

@@ -1,16 +1,37 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 // import styled from '@emotion/styled';
 // import { css, jsx } from '@emotion/core'
 // import Image from "next/image";
 // import Deco from "../../../../public/mainSectionDeco.svg"
 
 const Main = ({ content, themeId }) => {
-  const date = new Date(content.date).toLocaleTimeString('en', {
-    month: '2-digit',
-    day: '2-digit',
-    hour: '2-digit',
-    minute: '2-digit',
-  });
+  const [date, setDate] = useState<string>();
+
+  useEffect(() => {
+    if (isNaN(content.date) == false) {
+      const date = new Date(content.date).toLocaleTimeString('en', {
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+      });
+
+      setDate(date);
+
+      // invalid 할 경우
+    } else {
+      const date = new Date(content.date.split('T')[0]).toLocaleTimeString(
+        'en',
+        {
+          month: '2-digit',
+          day: '2-digit',
+          hour: '2-digit',
+          minute: '2-digit',
+        }
+      );
+      setDate(date);
+    }
+  }, []);
 
   switch (themeId) {
     case 'template1':

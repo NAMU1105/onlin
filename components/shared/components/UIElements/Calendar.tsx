@@ -8,10 +8,21 @@ type KorDate = {
 };
 
 const CalendarComp = ({ content, themeId }) => {
-  const [value, onChange] = useState<Date>(new Date(content.date));
+  const [value, setDateValue] = useState<Date>();
+  // const [value, onChange] = useState<Date>(new Date(content.date));
   const [korDate, setkorDate] = useState<KorDate>({ year: '', month: '' });
 
   useEffect(() => {
+    if (isNaN(content.date) == false) {
+      const date = new Date(content.date);
+      setDateValue(date);
+
+      // invalid 할 경우
+    } else {
+      const date = new Date(content.date.split('T')[0]);
+      setDateValue(date);
+    }
+
     setkorDate({
       year: content.date.split('-')[0],
       month:
@@ -31,7 +42,7 @@ const CalendarComp = ({ content, themeId }) => {
         <span>{korDate.month}</span>
         <span className={`subtext`}>월</span>
       </h1>
-      <Calendar onChange={() => onChange} value={value} locale='en' />
+      <Calendar onChange={() => setDateValue} value={value} locale='en' />
     </section>
   );
 };

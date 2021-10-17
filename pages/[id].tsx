@@ -46,7 +46,8 @@ const Detail = (props) => {
 
   const data = JSON.parse(props.loadedUsers.data).template.templateContent;
   const userData = JSON.parse(props.loadedUsers.data);
-  const templateId = JSON.parse(props.loadedUsers.data).template.templateName;
+  const templateId = `template${props.loadedUsers.theme_id}`;
+  // const templateId = JSON.parse(props.loadedUsers.data).template.templateName;
 
   return (
     <>
@@ -75,7 +76,6 @@ const Detail = (props) => {
         />
       </Head>
       {data.map((t, index) => {
-        console.log(t.sectionName.toLowerCase());
         const name = t.sectionName.toLowerCase();
         return (
           <ComponentMiddleWare
@@ -94,10 +94,7 @@ const Detail = (props) => {
 };
 
 async function getData(id: string) {
-  console.log({ id });
-
   const data = await requestTempleteData(id);
-  console.log({ data });
 
   return data;
 }
