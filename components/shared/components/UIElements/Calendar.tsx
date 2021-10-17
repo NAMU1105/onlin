@@ -26,11 +26,28 @@ const CalendarComp = ({ content, themeId }) => {
     setkorDate({
       year: content.date.split('-')[0],
       month:
-        content.date.split('-')[1].split('0')[0] === '0'
+        content.date.split('-')[1][0] === '0'
           ? content.date.split('-')[1].split('0')[1]
           : content.date.split('-')[1],
     });
-  }, [value]);
+
+    //////
+    if (!document) return;
+    const mon = document?.querySelector('[aria-label="Monday"]');
+    mon.innerHTML = 'M';
+    const tue = document?.querySelector('[aria-label="Tuesday"]');
+    tue.innerHTML = 'T';
+    const wed = document?.querySelector('[aria-label="Wednesday"]');
+    wed.innerHTML = 'W';
+    const thur = document?.querySelector('[aria-label="Thursday"]');
+    thur.innerHTML = 'T';
+    const fri = document?.querySelector('[aria-label="Friday"]');
+    fri.innerHTML = 'F';
+    const sat = document?.querySelector('[aria-label="Saturday"]');
+    sat.innerHTML = 'S';
+    const sun = document?.querySelector('[aria-label="Sunday"]');
+    sun.innerHTML = 'S';
+  }, []);
 
   return (
     <section className={`intro-y w-full theme-${themeId}`}>
@@ -42,7 +59,12 @@ const CalendarComp = ({ content, themeId }) => {
         <span>{korDate.month}</span>
         <span className={`subtext`}>월</span>
       </h1>
-      <Calendar onChange={() => setDateValue} value={value} locale='en' />
+      <Calendar
+        onChange={() => setDateValue}
+        value={value}
+        locale='en'
+        calendarType='US'
+      />
     </section>
   );
 };

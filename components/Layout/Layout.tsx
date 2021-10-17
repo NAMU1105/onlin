@@ -6,7 +6,7 @@ const Layout = ({ children }) => {
     <>
       <Head>
         <title>Olin</title>
-        <link rel='icon' href='/favicon.ico' />
+        <link rel='icon' href='/favicon.svg' />
         {/* kakao map */}
         <script
           type='text/javascript'

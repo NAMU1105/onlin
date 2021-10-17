@@ -42,6 +42,11 @@ const Detail = (props) => {
   if (!props.loadedUsers) {
     //   TODO: 로딩 스피너 예쁜걸로 수정하기
     return <p>Loading...</p>;
+    // return (
+    //   <div className='loader__wrapper'>
+    //     <div className='loader'></div>
+    //   </div>
+    // );
   }
 
   const data = JSON.parse(props.loadedUsers.data).template.templateContent;
@@ -93,18 +98,16 @@ const Detail = (props) => {
   );
 };
 
-async function getData(id: string) {
+const getData = async (id: string) => {
   const data = await requestTempleteData(id);
-
   return data;
-}
+};
 
 export const getStaticProps = async (context) => {
   const { params } = context;
   const userId = params.id;
 
   const user = await getData(userId);
-  console.log({ user });
 
   //   invalid한 url일 경우 404페이지 띄움
   if (!user) {

@@ -60,7 +60,9 @@
   templatetransform: uppercase;
   font-weight: bold;
   margin-bottom: 1rem;
+  /*
   padding: 0 1rem;
+  */
 }
 .react-calendar__month-view__weekdays__weekday {
   text-align: center;
@@ -74,6 +76,34 @@
   */
 }
 
+.theme-template1 .react-calendar__month-view__weekdays__weekday abbr {
+  color: #937f89;
+  display: block;
+}
+.theme-template2 .react-calendar__month-view__weekdays__weekday abbr {
+  color: #887f83;
+  display: block;
+}
+.theme-template39D8F85 .react-calendar__month-view__weekdays__weekday abbr {
+  color: #7e867a;
+  display: block;
+}
+
+.theme-template1
+  .react-calendar__month-view__weekdays__weekday:nth-child(1)
+  abbr::first-letter,
+.theme-template2
+  .react-calendar__month-view__weekdays__weekday:nth-child(1)
+  abbr::first-letter,
+.theme-template3
+  .react-calendar__month-view__weekdays__weekday:nth-child(1)
+  abbr::first-letter {
+  color: #9e142d !important;
+}
+
+/*날짜들 간격 맞추기*/
+
+/*
 .react-calendar__month-view__weekdays__weekday abbr {
   margin-left: -0.5rem;
 }
@@ -82,11 +112,6 @@
   color: transparent;
 }
 
-.theme-template1 abbr::first-letter {
-  color: #937f89;
-}
-
-/*날짜들 간격 맞추기*/
 .theme-template1 .react-calendar__month-view__weekdays__weekday:nth-child(3),
 .theme-template2 .react-calendar__month-view__weekdays__weekday:nth-child(3),
 .theme-template3 .react-calendar__month-view__weekdays__weekday:nth-child(3) {
@@ -115,17 +140,9 @@
   color: transparent;
   padding-left: 2.8rem !important;
 }
-.theme-template1
-  .react-calendar__month-view__weekdays__weekday:nth-child(7)
-  abbr::first-letter,
-.theme-template2
-  .react-calendar__month-view__weekdays__weekday:nth-child(7)
-  abbr::first-letter,
-.theme-template3
-  .react-calendar__month-view__weekdays__weekday:nth-child(7)
-  abbr::first-letter {
-  color: #9e142d !important;
-}
+
+
+*/
 
 .react-calendar__month-view__weekNumbers {
   font-weight: bold;

@@ -79,7 +79,7 @@ const Contact = ({ content, themeId, extraData }) => {
         </div>
       </div>
       {/* 혼주 정보 */}
-      <table className='mt-6 w-full'>
+      <table className='mt-6 w-full whitespace-nowrap'>
         <thead className='leading-loose'>
           <tr className={`text-primary--${themeId}`}>
             <th className='text-left pl-4 font-normal'>신랑 측 혼주</th>

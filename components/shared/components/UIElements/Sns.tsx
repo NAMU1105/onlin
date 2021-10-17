@@ -47,7 +47,7 @@ const Sns = ({ content, themeId, extraData }) => {
     };
   }, []);
 
-  function shareFacebook() {
+  const shareFacebook = () => {
     if (!window) return;
 
     window.FB.ui(
@@ -55,7 +55,7 @@ const Sns = ({ content, themeId, extraData }) => {
         method: 'share',
         href: currentLocation,
       },
-      function (data) {
+      (data) => {
         setIsToastOpen(true);
 
         if (data && !data.error_code) {
@@ -71,7 +71,7 @@ const Sns = ({ content, themeId, extraData }) => {
         }, 1200);
       }
     );
-  }
+  };
 
   // text 복사하기 기능
   const copy = () => {
@@ -158,15 +158,9 @@ const Sns = ({ content, themeId, extraData }) => {
         <ul className='sns__list'>
           {content.snsList.includes('facebook') && (
             <li className='sns__list__item' onClick={shareFacebook}>
-              {/* <li className='sns__list__item' onClick={() => share('facebook')}> */}
               <FacebookIcon />
             </li>
           )}
-
-          {/* {content.snsList.includes('facebook') && (
-        <li className='sns__list__item sns__list__item--ig'>
-          <IGIcon className='absolute w-full top-2.5' />
-        </li>)} */}
           {content.snsList.includes('kakao') && (
             <li
               className='sns__list__item sns__list__item--kakao'
